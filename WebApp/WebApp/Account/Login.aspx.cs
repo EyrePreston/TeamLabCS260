@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace WebApp.Account
 {
@@ -20,5 +21,34 @@ namespace WebApp.Account
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
         }
+
+        
+
+       
+
+        protected void Password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+
+           
+
+            SqlConnection con = new SqlConnection(@"Data Source=PRESTONEYRE\SQLEXPRESS;Initial Catalog=internshipLDSBC;Persist Security Info=True");
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM login WHERE username='"+ UserName.Text +"' AND password='"+  +"'",con);
+
+
+
+
+        }
+
+        protected void UserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
