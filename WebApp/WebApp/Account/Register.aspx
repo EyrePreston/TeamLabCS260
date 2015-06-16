@@ -57,6 +57,23 @@
                 </ContentTemplate>
                 <CustomNavigationTemplate />
             </asp:CreateUserWizardStep>
+<asp:CompleteWizardStep runat="server">
+    <ContentTemplate>
+        <table>
+            <tr>
+                <td align="center" colspan="2">Complete</td>
+            </tr>
+            <tr>
+                <td>Your account has been successfully created.</td>
+            </tr>
+            <tr>
+                <td align="right" colspan="2">
+                    <asp:Button ID="ContinueButton" runat="server" CausesValidation="False" CommandName="Continue" Text="Continue" ValidationGroup="RegisterUser" />
+                </td>
+            </tr>
+        </table>
+    </ContentTemplate>
+            </asp:CompleteWizardStep>
         </WizardSteps>
     </asp:CreateUserWizard>
 </asp:Content>
