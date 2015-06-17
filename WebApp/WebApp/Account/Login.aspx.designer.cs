@@ -13,22 +13,12 @@ namespace WebApp.Account {
     public partial class Login {
         
         /// <summary>
-<<<<<<< HEAD
-        /// LoginView1 control.
-=======
         /// txtEmail control.
->>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD
-        protected global::System.Web.UI.WebControls.LoginView LoginView1;
-        
-        /// <summary>
-        /// Login1 control.
-=======
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
@@ -51,15 +41,11 @@ namespace WebApp.Account {
         
         /// <summary>
         /// lblConfirmation control.
->>>>>>> origin/master
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-<<<<<<< HEAD
-        protected global::System.Web.UI.WebControls.Login Login1;
-=======
         protected global::System.Web.UI.WebControls.Label lblConfirmation;
         
         /// <summary>
@@ -70,6 +56,5 @@ namespace WebApp.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink RegisterHyperLink;
->>>>>>> origin/master
     }
 }

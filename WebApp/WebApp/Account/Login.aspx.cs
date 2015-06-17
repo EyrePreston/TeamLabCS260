@@ -14,14 +14,8 @@ namespace WebApp.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
-<<<<<<< HEAD
-
-
-        
-=======
-
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             SqlConnection cn = new SqlConnection("Data Source=EQUIPO-ADRIAN;Initial Catalog=internshipLDSBC;Integrated Security=True");
@@ -30,14 +24,14 @@ namespace WebApp.Account
             DataTable dt = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM aspnet_Membership WHERE Email = @Email AND Password = @Password", cn);
 
-            using (cn) 
+            using (cn)
             {
                 sda.SelectCommand.Parameters.AddWithValue("@Email", this.txtEmail.Text);
                 sda.SelectCommand.Parameters.AddWithValue("@Password", this.txtPassword.Text);
 
                 sda.Fill(dt);
 
-                if( dt.Rows.Count == 0)
+                if (dt.Rows.Count == 0)
                 {
                     lblConfirmation.Text = "User or Password not valid";
                     return;
@@ -46,6 +40,5 @@ namespace WebApp.Account
                 lblConfirmation.Text = "Welcome " + txtEmail.Text;
             }
         }
->>>>>>> origin/master
-    }
+    }       
 }

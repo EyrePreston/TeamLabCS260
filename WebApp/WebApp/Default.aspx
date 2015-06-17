@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApp._Default" %>
 
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
-    &nbsp;&nbsp;&nbsp;
-    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
+    &nbsp;<asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
         <AlternatingItemTemplate>
             <tr style="background-color: #FFFFFF;color: #284775;">
                 <td>
@@ -121,6 +120,6 @@
         </SelectedItemTemplate>
     </asp:ListView>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=PRESTONEYRE\SQLEXPRESS;Initial Catalog=internshipLDSBC;Persist Security Info=True;User ID=internUser;Password=ldsbc" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Company Name] AS Company_Name, [Address 1] AS Address_1, [Address 2] AS Address_2, [Phone Number] AS Phone_Number FROM [Company]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=PRESTONEYRE\SQLEXPRESS;Initial Catalog=internshipLDSBC;Persist Security Info=True;User ID=internUser;Password=ldsbc" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Address1], [CompanyName], [Address2], [PhoneNumber], [Description] FROM [Company]"></asp:SqlDataSource>
 
 </asp:Content>
