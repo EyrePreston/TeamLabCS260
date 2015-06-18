@@ -6,7 +6,6 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Membership.OpenAuth;
-using System.Data.SqlClient;
 
 namespace WebApp.Account
 {
@@ -16,7 +15,6 @@ namespace WebApp.Account
         {
             RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
         }
-        
 
         protected void RegisterUser_CreatedUser(object sender, EventArgs e)
         {
@@ -28,10 +26,6 @@ namespace WebApp.Account
                 continueUrl = "~/";
             }
             Response.Redirect(continueUrl);
-            
-           
         }
-
-        
     }
 }

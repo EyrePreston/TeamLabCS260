@@ -13,10 +13,5 @@ namespace WebApp
         {
 
         }
-
-        protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

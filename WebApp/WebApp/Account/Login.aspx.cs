@@ -20,10 +20,5 @@ namespace WebApp.Account
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
         }
-
-        protected void UserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -17,7 +17,7 @@
                     <ol>
                         <li>
                             <asp:Label runat="server" AssociatedControlID="UserName">User name</asp:Label>
-                            <asp:TextBox runat="server" ID="UserName" OnTextChanged="UserName_TextChanged" />
+                            <asp:TextBox runat="server" ID="UserName" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="field-validation-error" ErrorMessage="The user name field is required." />
                         </li>
                         <li>
@@ -30,7 +30,7 @@
                             <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="checkbox">Remember me?</asp:Label>
                         </li>
                     </ol>
-                    <asp:Button runat="server" CommandName="Login" Text="Log in" OnClick="Unnamed6_Click" />
+                    <asp:Button runat="server" CommandName="Login" Text="Log in" />
                 </fieldset>
             </LayoutTemplate>
         </asp:Login>
