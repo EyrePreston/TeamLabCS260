@@ -22,13 +22,13 @@ namespace WebApp
             SqlConnection cn = new SqlConnection(@"Data Source=PRESTONEYRE\SQLEXPRESS;Initial Catalog=internshipLDSBC;Persist Security Info=True;User ID=internUser;Password=ldsbc");
             cn.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO Company (CompanyName, Address1, Address2, PhoneNumber, Description) VALUES (@CompanyName,@Address 1,@Address 2,@Phone Number,@Description)", cn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Company (CompanyName, Address1, Address2, PhoneNumber, Description) VALUES (@CompanyName,@Address1,@Address2,@PhoneNumber,@Description)", cn);
 
-            cmd.Parameters.Add("@Company Name", TextBox1.Text);
-            cmd.Parameters.Add("@Address 1", address1.Text);
-            cmd.Parameters.Add("@Address 2", address2.Text);
-            cmd.Parameters.Add("@Phone Number", phoneNumber.Text);
-            cmd.Parameters.Add("@Description", descrition_textbox.Text);
+            cmd.Parameters.AddWithValue("@CompanyName", TextBox1.Text);
+            cmd.Parameters.AddWithValue("@Address1", address1.Text);
+            cmd.Parameters.AddWithValue("@Address2", address2.Text);
+            cmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber.Text);
+            cmd.Parameters.AddWithValue("@Description", descrition_textbox.Text);
             cmd.ExecuteNonQuery();
 
         }
