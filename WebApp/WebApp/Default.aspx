@@ -1,128 +1,43 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApp._Default" %>
 
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
-    &nbsp;&nbsp;&nbsp;
-    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
-        <AlternatingItemTemplate>
-            <span style="background-color: #FFFFFF;color: #284775;">CompanyName:
-            <asp:Label ID="CompanyNameLabel" runat="server" Text='<%# Eval("CompanyName") %>' />
-            <br />
-            Address1:
-            <asp:Label ID="Address1Label" runat="server" Text='<%# Eval("Address1") %>' />
-            <br />
-            Address2:
-            <asp:Label ID="Address2Label" runat="server" Text='<%# Eval("Address2") %>' />
-            <br />
-            PhoneNumber:
-            <asp:Label ID="PhoneNumberLabel" runat="server" Text='<%# Eval("PhoneNumber") %>' />
-            <br />
-            Description:
-            <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
-            <br />
-            <br />
-            </span>
-        </AlternatingItemTemplate>
-        <EditItemTemplate>
-            <span style="background-color: #999999;">CompanyName:
-            <asp:TextBox ID="CompanyNameTextBox" runat="server" Text='<%# Bind("CompanyName") %>' />
-            <br />
-            Address1:
-            <asp:TextBox ID="Address1TextBox" runat="server" Text='<%# Bind("Address1") %>' />
-            <br />
-            Address2:
-            <asp:TextBox ID="Address2TextBox" runat="server" Text='<%# Bind("Address2") %>' />
-            <br />
-            PhoneNumber:
-            <asp:TextBox ID="PhoneNumberTextBox" runat="server" Text='<%# Bind("PhoneNumber") %>' />
-            <br />
-            Description:
-            <asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' />
-            <br />
-            <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
-            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-            <br />
-            <br />
-            </span>
-        </EditItemTemplate>
-        <EmptyDataTemplate>
-            <span>No data was returned.</span>
-        </EmptyDataTemplate>
-        <InsertItemTemplate>
-            <span style="">CompanyName:
-            <asp:TextBox ID="CompanyNameTextBox" runat="server" Text='<%# Bind("CompanyName") %>' />
-            <br />
-            Address1:
-            <asp:TextBox ID="Address1TextBox" runat="server" Text='<%# Bind("Address1") %>' />
-            <br />
-            Address2:
-            <asp:TextBox ID="Address2TextBox" runat="server" Text='<%# Bind("Address2") %>' />
-            <br />
-            PhoneNumber:
-            <asp:TextBox ID="PhoneNumberTextBox" runat="server" Text='<%# Bind("PhoneNumber") %>' />
-            <br />
-            Description:
-            <asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' />
-            <br />
-            <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
-            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
-            <br />
-            <br />
-            </span>
-        </InsertItemTemplate>
-        <ItemTemplate>
-            <span style="background-color: #E0FFFF;color: #333333;">CompanyName:
-            <asp:Label ID="CompanyNameLabel" runat="server" Text='<%# Eval("CompanyName") %>' />
-            <br />
-            Address1:
-            <asp:Label ID="Address1Label" runat="server" Text='<%# Eval("Address1") %>' />
-            <br />
-            Address2:
-            <asp:Label ID="Address2Label" runat="server" Text='<%# Eval("Address2") %>' />
-            <br />
-            PhoneNumber:
-            <asp:Label ID="PhoneNumberLabel" runat="server" Text='<%# Eval("PhoneNumber") %>' />
-            <br />
-            Description:
-            <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
-            <br />
-            <br />
-            </span>
-        </ItemTemplate>
-        <LayoutTemplate>
-            <div id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
-                <span runat="server" id="itemPlaceholder" />
-            </div>
-            <div style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF;">
-                <asp:DataPager ID="DataPager1" runat="server">
-                    <Fields>
-                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
-                        <asp:NumericPagerField />
-                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
-                    </Fields>
-                </asp:DataPager>
-            </div>
-        </LayoutTemplate>
-        <SelectedItemTemplate>
-            <span style="background-color: #E2DED6;font-weight: bold;color: #333333;">CompanyName:
-            <asp:Label ID="CompanyNameLabel" runat="server" Text='<%# Eval("CompanyName") %>' />
-            <br />
-            Address1:
-            <asp:Label ID="Address1Label" runat="server" Text='<%# Eval("Address1") %>' />
-            <br />
-            Address2:
-            <asp:Label ID="Address2Label" runat="server" Text='<%# Eval("Address2") %>' />
-            <br />
-            PhoneNumber:
-            <asp:Label ID="PhoneNumberLabel" runat="server" Text='<%# Eval("PhoneNumber") %>' />
-            <br />
-            Description:
-            <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
-            <br />
-            <br />
-            </span>
-        </SelectedItemTemplate>
-    </asp:ListView>
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Height="468px" Width="919px" CellPadding="4" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" />
+        <Columns>
+            <asp:CommandField ShowEditButton="True" />
+            <asp:BoundField DataField="CompanyName" HeaderText="CompanyName" SortExpression="CompanyName" />
+            <asp:BoundField DataField="Address1" HeaderText="Address1" SortExpression="Address1" />
+            <asp:BoundField DataField="Address2" HeaderText="Address2" SortExpression="Address2" />
+            <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" SortExpression="PhoneNumber" />
+            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+        </Columns>
+        <EditRowStyle BackColor="#2461BF" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#EFF3FB" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+    </asp:GridView>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString2 %>" SelectCommand="SELECT [CompanyName], [Address1], [Address2], [PhoneNumber], [Description] FROM [Company]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" SelectCommand="SELECT [CompanyName], [Address1], [Address2], [PhoneNumber], [Description] FROM [Company]" InsertCommand="INSERT INTO [Company] ([CompanyName], [Address1], [Address2], [PhoneNumber], [Description]) VALUES (@CompanyName, @Address1, @Address2, @PhoneNumber, @Description)" UpdateCommand="UPDATE Company SET CompanyName = @CompanyName, Address1 = @address1, Address2 = @address2, PhoneNumber = @phoneNumber, Description = @description">
+        <InsertParameters>
+            <asp:Parameter Name="CompanyName" Type="String" />
+            <asp:Parameter Name="Address1" Type="String" />
+            <asp:Parameter Name="Address2" Type="String" />
+            <asp:Parameter Name="PhoneNumber" Type="String" />
+            <asp:Parameter Name="Description" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="CompanyName" />
+            <asp:Parameter Name="address1" />
+            <asp:Parameter Name="address2" />
+            <asp:Parameter Name="phoneNumber" />
+            <asp:Parameter Name="description" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
 
 </asp:Content>
