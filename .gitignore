@@ -194,16 +194,5 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
-# Web config page exempt.
+#Web.config exempt.
 Web.config
-WebApp/WebApp/Web.config
-WebApp/WebApp/DataSet1.Designer.cs
-WebApp/WebApp/DataSet1.xsc
-WebApp/WebApp/DataSet1.xsd
-WebApp/WebApp/DataSet1.xss
-WebApp/WebApp/Web.config
-WebApp/WebApp/WebForm1.aspx
-WebApp/WebApp/WebForm1.aspx.cs
-WebApp/WebApp/WebForm1.aspx.designer.cs
-WebApp/WebApp/Web.config
-WebApp/WebApp/Web.config

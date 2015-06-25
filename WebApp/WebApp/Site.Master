@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
     <asp:PlaceHolder runat="server">     
-          <%: Scripts.Render("~/bundles/modernizr") %>
+          <%: System.Web.Optimization.Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>  
     <webopt:BundleReference runat="server" Path="~/Content/css" /> 
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
