@@ -1,160 +1,155 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApp._Default" %>
 
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
-    <asp:ListView ID="ListView1" runat="server" DataKeyNames="ID" DataSourceID="SqlDataSource1" InsertItemPosition="LastItem">
+    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID" InsertItemPosition="LastItem">
         <AlternatingItemTemplate>
-            <span style="background-color: #FFFFFF;color: #284775;">ID:
-            <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
+            <span style="background-color: #FFFFFF;color: #284775;">CompanyName:
+            <asp:Label ID="CompanyNameLabel" runat="server" Text='<%# Eval("CompanyName") %>' />
             <br />
-            JobTitle:
-            <asp:Label ID="JobTitleLabel" runat="server" Text='<%# Eval("JobTitle") %>' />
+            Address1:
+            <asp:Label ID="Address1Label" runat="server" Text='<%# Eval("Address1") %>' />
             <br />
-            Department:
-            <asp:Label ID="DepartmentLabel" runat="server" Text='<%# Eval("Department") %>' />
+            Address2:
+            <asp:Label ID="Address2Label" runat="server" Text='<%# Eval("Address2") %>' />
             <br />
-            JobDescription:
-            <asp:Label ID="JobDescriptionLabel" runat="server" Text='<%# Eval("JobDescription") %>' />
+            PhoneNumber:
+            <asp:Label ID="PhoneNumberLabel" runat="server" Text='<%# Eval("PhoneNumber") %>' />
             <br />
-            ContactPerson:
-            <asp:Label ID="ContactPersonLabel" runat="server" Text='<%# Eval("ContactPerson") %>' />
+            Description:
+            <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
             <br />
-            Length:
-            <asp:Label ID="LengthLabel" runat="server" Text='<%# Eval("Length") %>' />
-            <br />
-            column1:
-            <asp:Label ID="column1Label" runat="server" Text='<%# Eval("column1") %>' />
             <br />
             <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
             <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
-<br /><br /></span>
+            <br />
+            <br />
+            </span>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            <span style="background-color: #999999;">ID:
-            <asp:Label ID="IDLabel1" runat="server" Text='<%# Eval("ID") %>' />
+            <span style="background-color: #999999;">CompanyName:
+            <asp:TextBox ID="CompanyNameTextBox" runat="server" Text='<%# Bind("CompanyName") %>' />
             <br />
-            JobTitle:
-            <asp:TextBox ID="JobTitleTextBox" runat="server" Text='<%# Bind("JobTitle") %>' />
+            Address1:
+            <asp:TextBox ID="Address1TextBox" runat="server" Text='<%# Bind("Address1") %>' />
             <br />
-            Department:
-            <asp:TextBox ID="DepartmentTextBox" runat="server" Text='<%# Bind("Department") %>' />
+            Address2:
+            <asp:TextBox ID="Address2TextBox" runat="server" Text='<%# Bind("Address2") %>' />
             <br />
-            JobDescription:
-            <asp:TextBox ID="JobDescriptionTextBox" runat="server" Text='<%# Bind("JobDescription") %>' />
+            PhoneNumber:
+            <asp:TextBox ID="PhoneNumberTextBox" runat="server" Text='<%# Bind("PhoneNumber") %>' />
             <br />
-            ContactPerson:
-            <asp:TextBox ID="ContactPersonTextBox" runat="server" Text='<%# Bind("ContactPerson") %>' />
+            Description:
+            <asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' />
             <br />
-            Length:
-            <asp:TextBox ID="LengthTextBox" runat="server" Text='<%# Bind("Length") %>' />
-            <br />
-            column1:
-            <asp:TextBox ID="column1TextBox" runat="server" Text='<%# Bind("column1") %>' />
             <br />
             <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
             <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-            <br /><br /></span>
+            <br />
+            <br />
+            </span>
         </EditItemTemplate>
         <EmptyDataTemplate>
             <span>No data was returned.</span>
         </EmptyDataTemplate>
         <InsertItemTemplate>
-            <span style="">JobTitle:
-            <asp:TextBox ID="JobTitleTextBox" runat="server" Text='<%# Bind("JobTitle") %>' />
-            <br />Department:
-            <asp:TextBox ID="DepartmentTextBox" runat="server" Text='<%# Bind("Department") %>' />
-            <br />JobDescription:
-            <asp:TextBox ID="JobDescriptionTextBox" runat="server" Text='<%# Bind("JobDescription") %>' />
-            <br />ContactPerson:
-            <asp:TextBox ID="ContactPersonTextBox" runat="server" Text='<%# Bind("ContactPerson") %>' />
-            <br />Length:
-            <asp:TextBox ID="LengthTextBox" runat="server" Text='<%# Bind("Length") %>' />
-            <br />column1:
-            <asp:TextBox ID="column1TextBox" runat="server" Text='<%# Bind("column1") %>' />
+            <span style="">CompanyName:
+            <asp:TextBox ID="CompanyNameTextBox" runat="server" Text='<%# Bind("CompanyName") %>' />
+            <br />
+            Address1:
+            <asp:TextBox ID="Address1TextBox" runat="server" Text='<%# Bind("Address1") %>' />
+            <br />
+            Address2:
+            <asp:TextBox ID="Address2TextBox" runat="server" Text='<%# Bind("Address2") %>' />
+            <br />
+            PhoneNumber:
+            <asp:TextBox ID="PhoneNumberTextBox" runat="server" Text='<%# Bind("PhoneNumber") %>' />
+            <br />
+            Description:
+            <asp:TextBox ID="DescriptionTextBox" runat="server" Text='<%# Bind("Description") %>' />
             <br />
             <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
             <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
-            <br /><br /></span>
+            <br />
+            <br />
+            </span>
         </InsertItemTemplate>
         <ItemTemplate>
-            <span style="background-color: #E0FFFF;color: #333333;">ID:
-            <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
+            <span style="background-color: #E0FFFF;color: #333333;">CompanyName:
+            <asp:Label ID="CompanyNameLabel" runat="server" Text='<%# Eval("CompanyName") %>' />
             <br />
-            JobTitle:
-            <asp:Label ID="JobTitleLabel" runat="server" Text='<%# Eval("JobTitle") %>' />
+            Address1:
+            <asp:Label ID="Address1Label" runat="server" Text='<%# Eval("Address1") %>' />
             <br />
-            Department:
-            <asp:Label ID="DepartmentLabel" runat="server" Text='<%# Eval("Department") %>' />
+            Address2:
+            <asp:Label ID="Address2Label" runat="server" Text='<%# Eval("Address2") %>' />
             <br />
-            JobDescription:
-            <asp:Label ID="JobDescriptionLabel" runat="server" Text='<%# Eval("JobDescription") %>' />
+            PhoneNumber:
+            <asp:Label ID="PhoneNumberLabel" runat="server" Text='<%# Eval("PhoneNumber") %>' />
             <br />
-            ContactPerson:
-            <asp:Label ID="ContactPersonLabel" runat="server" Text='<%# Eval("ContactPerson") %>' />
+            Description:
+            <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
             <br />
-            Length:
-            <asp:Label ID="LengthLabel" runat="server" Text='<%# Eval("Length") %>' />
-            <br />
-            column1:
-            <asp:Label ID="column1Label" runat="server" Text='<%# Eval("column1") %>' />
             <br />
             <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
             <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
-<br /><br /></span>
+            <br />
+            <br />
+            </span>
         </ItemTemplate>
         <LayoutTemplate>
             <div id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
                 <span runat="server" id="itemPlaceholder" />
             </div>
             <div style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF;">
+                <asp:DataPager ID="DataPager1" runat="server">
+                    <Fields>
+                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
+                    </Fields>
+                </asp:DataPager>
             </div>
         </LayoutTemplate>
         <SelectedItemTemplate>
-            <span style="background-color: #E2DED6;font-weight: bold;color: #333333;">ID:
-            <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
+            <span style="background-color: #E2DED6;font-weight: bold;color: #333333;">CompanyName:
+            <asp:Label ID="CompanyNameLabel" runat="server" Text='<%# Eval("CompanyName") %>' />
             <br />
-            JobTitle:
-            <asp:Label ID="JobTitleLabel" runat="server" Text='<%# Eval("JobTitle") %>' />
+            Address1:
+            <asp:Label ID="Address1Label" runat="server" Text='<%# Eval("Address1") %>' />
             <br />
-            Department:
-            <asp:Label ID="DepartmentLabel" runat="server" Text='<%# Eval("Department") %>' />
+            Address2:
+            <asp:Label ID="Address2Label" runat="server" Text='<%# Eval("Address2") %>' />
             <br />
-            JobDescription:
-            <asp:Label ID="JobDescriptionLabel" runat="server" Text='<%# Eval("JobDescription") %>' />
+            PhoneNumber:
+            <asp:Label ID="PhoneNumberLabel" runat="server" Text='<%# Eval("PhoneNumber") %>' />
             <br />
-            ContactPerson:
-            <asp:Label ID="ContactPersonLabel" runat="server" Text='<%# Eval("ContactPerson") %>' />
+            Description:
+            <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
             <br />
-            Length:
-            <asp:Label ID="LengthLabel" runat="server" Text='<%# Eval("Length") %>' />
-            <br />
-            column1:
-            <asp:Label ID="column1Label" runat="server" Text='<%# Eval("column1") %>' />
             <br />
             <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
             <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
-<br /><br /></span>
+            <br />
+            <br />
+            </span>
         </SelectedItemTemplate>
     </asp:ListView>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" SelectCommand="SELECT [ID], [JobTitle], [Department], [JobDescription], [ContactPerson], [Length], [[CompanyID]  FROM [Internship(Job)]" InsertCommand="INSERT INTO [Internship(Job)] ([JobTitle], [Department], [JobDescription], [ContactPerson], [Length], [[CompanyID]) VALUES (@JobTitle, @Department, @JobDescription, @ContactPerson, @Length, @column1)" UpdateCommand="UPDATE [Internship(Job)] SET [JobTitle] = @JobTitle, [Department] = @Department, [JobDescription] = @JobDescription, [ContactPerson] = @ContactPerson, [Length] = @Length, [[CompanyID] = @column1 WHERE [ID] = @ID" DeleteCommand="DELETE FROM [Internship(Job)] WHERE [ID] = @ID">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" SelectCommand="SELECT [CompanyName], [Address1], [Address2], [PhoneNumber], [Description], [ID] FROM [Company]" InsertCommand="INSERT INTO [Company] ([CompanyName], [Address1], [Address2], [PhoneNumber], [Description]) VALUES (@CompanyName, @Address1, @Address2, @PhoneNumber, @Description)" UpdateCommand="UPDATE [Company] SET [CompanyName] = @CompanyName, [Address1] = @Address1, [Address2] = @Address2, [PhoneNumber] = @PhoneNumber, [Description] = @Description WHERE [ID] = @ID" DeleteCommand="DELETE FROM [Company] WHERE [ID] = @ID">
         <DeleteParameters>
             <asp:Parameter Name="ID" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
-            <asp:Parameter Name="JobTitle" Type="String" />
-            <asp:Parameter Name="Department" Type="String" />
-            <asp:Parameter Name="JobDescription" Type="String" />
-            <asp:Parameter Name="ContactPerson" Type="String" />
-            <asp:Parameter Name="Length" Type="String" />
-            <asp:Parameter Name="CompanyID" Type="Int32" DefaultValue="1" />
+            <asp:Parameter Name="CompanyName" Type="String" />
+            <asp:Parameter Name="Address1" Type="String" />
+            <asp:Parameter Name="Address2" Type="String" />
+            <asp:Parameter Name="PhoneNumber" Type="String" />
+            <asp:Parameter Name="Description" Type="String" />
         </InsertParameters>
         <UpdateParameters>
-            <asp:Parameter Name="JobTitle" Type="String" />
-            <asp:Parameter Name="Department" Type="String" />
-            <asp:Parameter Name="JobDescription" Type="String" />
-            <asp:Parameter Name="ContactPerson" Type="String" />
-            <asp:Parameter Name="Length" Type="String" />
-            <asp:Parameter Name="CompanyID" Type="Int32" DefaultValue="1" />
+            <asp:Parameter Name="CompanyName" Type="String" />
+            <asp:Parameter Name="Address1" Type="String" />
+            <asp:Parameter Name="Address2" Type="String" />
+            <asp:Parameter Name="PhoneNumber" Type="String" />
+            <asp:Parameter Name="Description" Type="String" />
             <asp:Parameter Name="ID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
