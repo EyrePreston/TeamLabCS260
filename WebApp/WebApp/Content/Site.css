@@ -101,9 +101,7 @@ h5, h6 {
     background-color: #efeeef;
     clear: both;
     padding-bottom: 35px;
-    margin-left: 10%;
-    margin-right: 10%;
-    border: solid 1pt;
+    
     
 }
 
@@ -498,12 +496,7 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-errors {
     color: #e80c4d;
     font-weight: bold;
-    font-size: 1.1em;
-}
-
-.validation-summary-valid {
-    display: none;
-}
+    
 
 /* tables
 ----------------------------------------------------------*/
@@ -513,6 +506,11 @@ table {
     border-width: 0;
     border-collapse: collapse;
     border-spacing: 0;
+    margin-top: 0.75em;
+    margin-right: 0px;
+}
+
+order-spacing: 0;
     margin-top: 0.75em;
     margin-right: 0px;
 }
@@ -569,6 +567,7 @@ td {
 tr.pager td {
     padding: 0 0.25em 0 0;
 }
+
 
 
 /********************

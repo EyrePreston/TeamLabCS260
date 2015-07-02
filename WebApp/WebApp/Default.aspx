@@ -10,7 +10,7 @@
             <asp:Label ID="JobTitleLabel" runat="server" Text='<%# Eval("JobTitle") %>' />
             <br />
             [CompanyID:
-            <asp:Label ID="_CompanyIDLabel" runat="server" Text='<%# Eval("[[CompanyID]") %>' />
+            <asp:Label ID="_CompanyIDLabel" runat="server" Text='<%# Eval("CompanyID") %>' />
             <br />
             Department:
             <asp:Label ID="DepartmentLabel" runat="server" Text='<%# Eval("Department") %>' />
@@ -35,7 +35,7 @@
             <asp:TextBox ID="JobTitleTextBox" runat="server" Text='<%# Bind("JobTitle") %>' />
             <br />
             [CompanyID:
-            <asp:TextBox ID="_CompanyIDTextBox" runat="server" Text='<%# Bind("[[CompanyID]") %>' />
+            <asp:TextBox ID="_CompanyIDTextBox" runat="server" Text='<%# Bind("CompanyID") %>' />
             <br />
             Department:
             <asp:TextBox ID="DepartmentTextBox" runat="server" Text='<%# Bind("Department") %>' />
@@ -63,7 +63,7 @@
             <asp:TextBox ID="JobTitleTextBox" runat="server" Text='<%# Bind("JobTitle") %>' />
             <br />
             [CompanyID:
-            <asp:TextBox ID="_CompanyIDTextBox" runat="server" Text='<%# Bind("[[CompanyID]") %>' />
+            <asp:TextBox ID="_CompanyIDTextBox" runat="server" Text='<%# Bind("CompanyID") %>' />
             <br />
             Department:
             <asp:TextBox ID="DepartmentTextBox" runat="server" Text='<%# Bind("Department") %>' />
@@ -91,7 +91,7 @@
             <asp:Label ID="JobTitleLabel" runat="server" Text='<%# Eval("JobTitle") %>' />
             <br />
             [CompanyID:
-            <asp:Label ID="_CompanyIDLabel" runat="server" Text='<%# Eval("[[CompanyID]") %>' />
+            <asp:Label ID="_CompanyIDLabel" runat="server" Text='<%# Eval("CompanyID") %>' />
             <br />
             Department:
             <asp:Label ID="DepartmentLabel" runat="server" Text='<%# Eval("Department") %>' />
@@ -130,7 +130,7 @@
             <asp:Label ID="JobTitleLabel" runat="server" Text='<%# Eval("JobTitle") %>' />
             <br />
             [CompanyID:
-            <asp:Label ID="_CompanyIDLabel" runat="server" Text='<%# Eval("[[CompanyID]") %>' />
+            <asp:Label ID="_CompanyIDLabel" runat="server" Text='<%# Eval("CompanyID") %>' />
             <br />
             Department:
             <asp:Label ID="DepartmentLabel" runat="server" Text='<%# Eval("Department") %>' />
@@ -149,13 +149,13 @@
         </SelectedItemTemplate>
     </asp:ListView>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" SelectCommand="SELECT * FROM [Internship(Job)]" InsertCommand="INSERT INTO [Internship(Job)] ([JobTitle], [[CompanyID], [Department], [JobDescription], [Length], [ContactPerson]) VALUES (@JobTitle, @column1, @Department, @JobDescription, @Length, @ContactPerson)" UpdateCommand="UPDATE [Internship(Job)] SET [JobTitle] = @JobTitle, [[CompanyID] = @column1, [Department] = @Department, [JobDescription] = @JobDescription, [Length] = @Length, [ContactPerson] = @ContactPerson WHERE [ID] = @ID" DeleteCommand="DELETE FROM [Internship(Job)] WHERE [ID] = @ID">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" SelectCommand="SELECT * FROM [Internship(Job)]" InsertCommand="INSERT INTO [Internship(Job)] ([JobTitle], [CompanyID], [Department], [JobDescription], [Length], [ContactPerson]) VALUES (@JobTitle, @CompanyID, @Department, @JobDescription, @Length, @ContactPerson)" UpdateCommand="UPDATE [Internship(Job)] SET [JobTitle] = @JobTitle, [CompanyID] = @CompanyID, [Department] = @Department, [JobDescription] = @JobDescription, [Length] = @Length, [ContactPerson] = @ContactPerson WHERE [ID] = @ID" DeleteCommand="DELETE FROM [Internship(Job)] WHERE [ID] = @ID">
         <DeleteParameters>
             <asp:Parameter Name="ID" Type="Int32" />
         </DeleteParameters>
         <InsertParameters>
             <asp:Parameter Name="JobTitle" Type="String" />
-            <asp:Parameter Name="column1" Type="Int32" />
+            <asp:Parameter Name="CompanyID" Type="Int32" />
             <asp:Parameter Name="Department" Type="String" />
             <asp:Parameter Name="JobDescription" Type="String" />
             <asp:Parameter Name="Length" Type="String" />
@@ -163,7 +163,7 @@
         </InsertParameters>
         <UpdateParameters>
             <asp:Parameter Name="JobTitle" Type="String" />
-            <asp:Parameter Name="column1" Type="Int32" />
+            <asp:Parameter Name="CompanyID" Type="Int32" />
             <asp:Parameter Name="Department" Type="String" />
             <asp:Parameter Name="JobDescription" Type="String" />
             <asp:Parameter Name="Length" Type="String" />
