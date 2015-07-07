@@ -6,7 +6,8 @@
 
 
     <asp:Login ID="Login1"
-        runat="server"
+        runat="server" 
+        OnLoggedIn="On_LoggedIn"
         BackColor="#F0FFFF"
         BorderColor="#CCCC99"
         BorderStyle="Solid"
@@ -15,6 +16,7 @@
         Font-Size="10pt"
         Height="565px" Width="950px"
         >
+
         <LayoutTemplate>
             <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
                 <tr>
