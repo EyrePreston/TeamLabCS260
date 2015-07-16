@@ -40,13 +40,13 @@ namespace WebApp {
         protected global::System.Web.UI.WebControls.TextBox gradeBox;
         
         /// <summary>
-        /// feedback control.
+        /// comments control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox feedback;
+        protected global::System.Web.UI.WebControls.TextBox comments;
         
         /// <summary>
         /// Submit control.

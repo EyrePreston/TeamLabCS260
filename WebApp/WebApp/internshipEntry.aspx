@@ -21,8 +21,8 @@ Grade.<br />
 <asp:TextBox ID="gradeBox" runat="server" OnTextChanged="gradeBox_TextChanged" Width="170px"></asp:TextBox>
 <br />
 <br />
-Feedback.<br />
-<asp:TextBox ID="feedback" runat="server" Height="100px" OnTextChanged="feedback_TextChanged" Width="220px"></asp:TextBox>
+            Comments.<br />
+<asp:TextBox ID="comments" runat="server" Height="100px" OnTextChanged="comments_TextChanged" Width="220px"></asp:TextBox>
 <br />
 <br />
 <br />
