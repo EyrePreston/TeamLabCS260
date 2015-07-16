@@ -19,38 +19,39 @@ namespace WebApp
         }
         protected void Submit_Click(object sender, EventArgs e)
         {
-            SqlConnection cn = new SqlConnection(@"Data Source=PRESTONEYRE\SQLEXPRESS;Initial Catalog=internshipLDSBC;Persist Security Info=True;User ID=internUser;Password=ldsbc");
+            // Change cunction string to your database.
+            SqlConnection cn = new SqlConnection(@"Data Source=WIN-H2I8SPBN92E\CS260FIRST;Initial Catalog=internshipLDSBC;Persist Security Info=True;User ID=internUser;Password=ldsbc");
             cn.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO Company (CompanyName, Address1, Address2, PhoneNumber, Description) VALUES (@CompanyName,@Address1,@Address2,@PhoneNumber,@Description)", cn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Rating (InternshipName, StudentName, Grade, Comments) VALUES (@InternshipName,@StudentName,@Grade,@Comments)", cn);
 
-            cmd.Parameters.AddWithValue("@CompanyName", TextBox1.Text);
-            cmd.Parameters.AddWithValue("@Address1", address1.Text);
-            cmd.Parameters.AddWithValue("@Address2", address2.Text);
-            cmd.Parameters.AddWithValue("@PhoneNumber", phoneNumber.Text);
-            cmd.Parameters.AddWithValue("@Description", descrition_textbox.Text);
+            cmd.Parameters.AddWithValue("@InternshipName", internshipName.Text);
+            cmd.Parameters.AddWithValue("@StudentName", studentName.Text);
+            cmd.Parameters.AddWithValue("@Grade", gradeBox.Text);
+            cmd.Parameters.AddWithValue("@Comments", feedback.Text);
             cmd.ExecuteNonQuery();
 
         }
 
-        protected void address1_TextChanged(object sender, EventArgs e)
+        protected void internshipName_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        protected void secondAddress_TextChanged(object sender, EventArgs e)
+        protected void studentName_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        protected void phoneNumber_TextChanged(object sender, EventArgs e)
+        protected void gradeBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        protected void descrition_textbox_TextChanged(object sender, EventArgs e)
+        protected void feedback_TextChanged(object sender, EventArgs e)
         {
 
         }
+
     }
 }
