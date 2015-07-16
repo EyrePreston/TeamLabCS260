@@ -141,7 +141,7 @@
                 <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
                 <br />
                 Job Title:
-                <asp:Label ID="Job_TitleLabel" runat="server" Text='<%# Eval("JobTitle") %>' />
+                <asp:Label ID="Job_TitleLabel" runat="server" Text='<%# Eval("[JobTitle]") %>' />
                 <br />
                 CompanyID:
                 <asp:Label ID="CompanyIDLabel" runat="server" Text='<%# Eval("CompanyID") %>' />

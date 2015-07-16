@@ -67,8 +67,17 @@
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="internshipEntry.aspx">Rate Intern</a></li>
+                        <li><a runat="server" href="ratingTable.aspx">Rating Table</a></li>
                     </ul>
                 </nav>
+                <%--Admin menu--%>
+                <nav>
+                    <ul id="menu">
+                        
+                    </ul>
+                </nav>
+                <asp:Panel ID="Panel1" runat="server">
+                </asp:Panel>
             </div>
         </div>
     </header>
