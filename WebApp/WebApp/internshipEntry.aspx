@@ -18,8 +18,15 @@
 <br />
             Letter
 Grade.<br />
-<asp:TextBox ID="gradeBox" runat="server" OnTextChanged="gradeBox_TextChanged" Width="170px"></asp:TextBox>
-<br />
+            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                <asp:ListItem>A</asp:ListItem>
+                <asp:ListItem>B</asp:ListItem>
+                <asp:ListItem>C</asp:ListItem>
+                <asp:ListItem>D</asp:ListItem>
+                <asp:ListItem>E</asp:ListItem>
+                <asp:ListItem>F</asp:ListItem>
+            </asp:DropDownList>
+            <br />
 <br />
             Comments.<br />
 <asp:TextBox ID="comments" runat="server" Height="100px" OnTextChanged="comments_TextChanged" Width="220px"></asp:TextBox>
