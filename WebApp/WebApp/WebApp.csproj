@@ -134,6 +134,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="ApplicationForm.aspx" />
     <Content Include="CompnayHomePage.aspx">
       <BrowseToURL>~/CompnayHomePage.aspx</BrowseToURL>
     </Content>
@@ -258,6 +259,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationForm.aspx.cs">
+      <DependentUpon>ApplicationForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplicationForm.aspx.designer.cs">
+      <DependentUpon>ApplicationForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="About.aspx.cs">

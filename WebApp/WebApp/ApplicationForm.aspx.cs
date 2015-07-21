@@ -30,6 +30,8 @@ namespace WebApp
             lblPosition.Text = reader["Postion"].ToString();
             connection.Close();
 
+            
+
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
