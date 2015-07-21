@@ -16,6 +16,7 @@ namespace WebApp
     {
         //private static string indexValue;
         private static int indexValue;
+        private int companyID;
         
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,9 +29,17 @@ namespace WebApp
             reader.Read();
             lblJobTitle.Text = reader["JobTitle"].ToString();
             lblPosition.Text = reader["Postion"].ToString();
+            companyID = (int) reader["CompanyID"];
             connection.Close();
 
-            
+            connection.Open();
+            SqlCommand getInfoFromCompany = new SqlCommand("SELECT * FROM [Company] WHERE ID=" + companyID, connection);
+            SqlDataReader reader2 = getInfoFromCompany.ExecuteReader();
+
+            reader2.Read();
+            lblCompany.Text = reader2["CompanyName"].ToString();
+            connection.Close();
+
 
         }
 
@@ -49,6 +58,8 @@ namespace WebApp
             mail.Body = "A student is interested in the following internship:" +
                 "\nStudent's Name: " + txtName.Text +
                 "\nStudent's Email: " + txtEmail.Text +
+                "\nJob Tile: " + lblJobTitle.Text +
+                "\nCompany: " + lblCompany.Text +
                 "\nPlease start the evaluation process";
             
             if(this.fileResume.HasFile)
