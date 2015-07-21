@@ -53,7 +53,7 @@
        <InsertItemTemplate>
                 <span style="background-color: #FFF8DC;">
                 Job Title:
-                <asp:TextBox ID="Job_TitleTextBox" runat="server" Text='<%# Bind("Job_Title") %>' />
+                <asp:TextBox ID="Job_TitleTextBox" runat="server" Text='<%# Bind("JobTitle") %>' />
                 <br />
                 CompanyID:
                 <asp:TextBox ID="CompanyIDTextBox" runat="server" Text='<%# Bind("CompanyID") %>' />
@@ -130,13 +130,13 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" DeleteCommand="DELETE FROM [Job] WHERE [ID] = @ID" InsertCommand="INSERT INTO [Job] ([JobTitle], [CompanyID], [Postion], [Description], [StartDate], [EndDate], [ContactName], [ContactPhone], [ContactEmail], [Status], [Openings]) VALUES (@Job_Title, @CompanyID, @Postion, @Description, @StartDate, @EndDate, @ContactName, @ContactPhone, @ContactEmail, @Status, @Openings)" SelectCommand="SELECT * FROM [Job]" UpdateCommand="UPDATE [Job] SET [JobTitle] = @Job_Title, [CompanyID] = @CompanyID, [Postion] = @Postion, [Description] = @Description, [StartDate] = @StartDate, [EndDate] = @EndDate, [ContactName] = @ContactName, [ContactPhone] = @ContactPhone, [ContactEmail] = @ContactEmail, [Status] = @Status, [Openings] = @Openings WHERE [ID] = @ID" ProviderName="System.Data.SqlClient">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" DeleteCommand="DELETE FROM [Job] WHERE [ID] = @ID" InsertCommand="INSERT INTO [Job] ([JobTitle], [CompanyID], [Postion], [Description], [StartDate], [EndDate], [ContactName], [ContactPhone], [ContactEmail], [Status], [Openings]) VALUES (@Job_Title, @CompanyID, @Postion, @Description, @StartDate, @EndDate, @ContactName, @ContactPhone, @ContactEmail, @Status, @Openings)" SelectCommand="SELECT * FROM [Job]" UpdateCommand="UPDATE [Job] SET [JobTitle] = @JobTitle, [CompanyID] = @CompanyID, [Postion] = @Postion, [Description] = @Description, [StartDate] = @StartDate, [EndDate] = @EndDate, [ContactName] = @ContactName, [ContactPhone] = @ContactPhone, [ContactEmail] = @ContactEmail, [Status] = @Status, [Openings] = @Openings WHERE [ID] = @ID" ProviderName="System.Data.SqlClient">
         <DeleteParameters>
             <asp:Parameter Name="ID" Type="Int32"/>
 
         </DeleteParameters>
         <InsertParameters>
-            <asp:Parameter Name="Job_Title" Type="String"  />
+            <asp:Parameter Name="JobTitle" Type="String"  />
             <asp:Parameter Name="CompanyID" Type="Int32" DefaultValue="1" />
             <asp:Parameter Name="Postion" Type="String" />
             <asp:Parameter Name="Description" Type="String" />
@@ -149,7 +149,7 @@
             <asp:Parameter Name="Openings" Type="Int32" />
         </InsertParameters>
         <UpdateParameters>
-            <asp:Parameter Name="Job_Title" Type="String" />
+            <asp:Parameter Name="JobTitle" Type="String" />
             <asp:Parameter Name="CompanyID" Type="Int32" />
             <asp:Parameter Name="Postion" Type="String" />
             <asp:Parameter Name="Description" Type="String" />
