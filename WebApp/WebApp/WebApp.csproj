@@ -134,7 +134,9 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
-    <Content Include="CompnayHomePage.aspx" />
+    <Content Include="CompnayHomePage.aspx">
+      <BrowseToURL>~/CompnayHomePage.aspx</BrowseToURL>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
