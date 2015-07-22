@@ -5,8 +5,8 @@
         <h1><%: Title %>.</h1>
         <h2>Use the form below to create a new account.</h2>
     </hgroup>
-
-    <asp:CreateUserWizard runat="server" ID="RegisterUser"  ViewStateMode="Disabled" OnCreatedUser="RegisterUser_CreatedUser">
+    <!-- Added the 'OnCreatingUser' property to use the 'RegisterUser_CreatingUser' method in the code behind. -->
+    <asp:CreateUserWizard runat="server" ID="RegisterUser" RequireEmail="false"  ViewStateMode="Disabled" OnCreatingUser="RegisterUser_CreatingUser" OnCreatedUser="RegisterUser_CreatedUser">
         <LayoutTemplate>
             <asp:PlaceHolder runat="server" ID="wizardStepPlaceholder" />
             <asp:PlaceHolder runat="server" ID="navigationPlaceholder" />
@@ -26,9 +26,9 @@
                         <legend>Registration Form</legend>
                         <ol>
                             <li>
-                                <asp:Label runat="server" AssociatedControlID="UserName">Company Name</asp:Label>
-                                <asp:TextBox runat="server" ID="UserName" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
+                                <asp:Label runat="server" AssociatedControlID="CompanyName">Company Name</asp:Label>
+                                <asp:TextBox runat="server" ID="CompanyName" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="CompanyName"
                                     CssClass="field-validation-error" ErrorMessage="The company name is required" />
                             </li>
                              <li>
@@ -44,27 +44,28 @@
                                      CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The address field is required." />
                             </li>
                              <li>
-                                <asp:Label runat="server" AssociatedControlID="ConfirmPassword">Company Phone Number</asp:Label>
+                                <asp:Label runat="server" AssociatedControlID="PhoneNumber">Company Phone Number</asp:Label>
                                 <asp:TextBox runat="server" ID="PhoneNumber"  />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="PhoneNumber"
                                      CssClass="field-validation-error" Display="Dynamic" ErrorMessage="A phone number is required." />
                             </li>
                              <li>
-                                <asp:Label runat="server" AssociatedControlID="ConfirmPassword">Contact Name</asp:Label>
+                                <asp:Label runat="server" AssociatedControlID="ContactName">Contact Name</asp:Label>
                                 <asp:TextBox runat="server" ID="ContactName"  />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="ContactName"
                                      CssClass="field-validation-error" Display="Dynamic" ErrorMessage="A contact name is required." />
                             </li>
                             <li>
-                                <asp:Label runat="server" AssociatedControlID="ConfirmPassword">Phone Number</asp:Label>
+                                <asp:Label runat="server" AssociatedControlID="ContactPhone">Phone Number</asp:Label>
                                 <asp:TextBox runat="server" ID="ContactPhone"  />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="ContactPhone"
                                      CssClass="field-validation-error" Display="Dynamic" ErrorMessage="A phone number is required." />
                             </li>
                             <li>
-                                <asp:Label runat="server" AssociatedControlID="Email">Contact Email</asp:Label>
-                                <asp:TextBox runat="server" ID="Email" TextMode="Email" />
-                                <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
+                                <!-- The Contact Email is now the under the UserName control so the membership table will recieve it as such -->
+                                <asp:Label runat="server" AssociatedControlID="UserName">Contact Email(This will also be your Username)</asp:Label>
+                                <asp:TextBox runat="server" ID="UserName" TextMode="Email" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
                                     CssClass="field-validation-error" ErrorMessage="The email address field is required." />
                             </li>
                             <li>

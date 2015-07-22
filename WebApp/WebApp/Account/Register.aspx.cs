@@ -19,8 +19,16 @@ namespace WebApp.Account
             RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
         }
 
+        //Method that causes the sender to use the email to be the same as the username.
+        protected void RegisterUser_CreatingUser(object sender, EventArgs e)
+        {
+            CreateUserWizard cu = (CreateUserWizard)sender;
+            cu.Email = cu.UserName;
+        }
+
         protected void RegisterUser_CreatedUser(object sender, EventArgs e)
         {
+
             // Cookie.
             FormsAuthentication.SetAuthCookie(RegisterUser.UserName, createPersistentCookie: false);
 
@@ -31,13 +39,13 @@ namespace WebApp.Account
 
             SqlCommand cmd = new SqlCommand("INSERT INTO Company (CompanyName, Address1, Address2, PhoneNumber, ContactName, ContactPhone, ContactEmail) VALUES (@CompanyName,@Address1,@Address2,@PhoneNumber,@ContactName,@ContactPhone,@Email)", cn);
 
-            cmd.Parameters.AddWithValue("@CompanyName", ((TextBox)(RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("UserName"))).Text);
+            cmd.Parameters.AddWithValue("@CompanyName", ((TextBox)(RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("CompanyName"))).Text);
             cmd.Parameters.AddWithValue("@Address1", ((TextBox)RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("address1")).Text);
             cmd.Parameters.AddWithValue("@Address2", ((TextBox)RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("address2")).Text);
             cmd.Parameters.AddWithValue("@PhoneNumber", ((TextBox)RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("PhoneNumber")).Text);
             cmd.Parameters.AddWithValue("@ContactName", ((TextBox)RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("ContactName")).Text);
             cmd.Parameters.AddWithValue("@ContactPhone", ((TextBox)RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("ContactPhone")).Text);
-            cmd.Parameters.AddWithValue("@Email", ((TextBox)RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("Email")).Text);
+            cmd.Parameters.AddWithValue("@Email", ((TextBox)RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("UserName")).Text);
             
 
             cmd.ExecuteNonQuery();

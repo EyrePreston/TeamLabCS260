@@ -19,7 +19,7 @@ namespace WebApp.Account
         {
             SqlConnection db = new SqlConnection(WebConfigurationManager.ConnectionStrings["internshipLDSBCConnectionString"].ToString() );
             db.Open();
-            SqlCommand cmd = new SqlCommand("SELECT ID FROM COMPANY WHERE EMAIL = @EMAIL", db);
+            SqlCommand cmd = new SqlCommand("SELECT ID FROM COMPANY WHERE ContactEmail = @EMAIL", db);
             
             cmd.Parameters.AddWithValue("@email", Login1.UserName);
 
