@@ -45,6 +45,7 @@ namespace WebApp
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
+            // Clean fields.
             txtName.Text = "";
             txtEmail.Text = "";
             txtPhone.Text = "";
@@ -76,6 +77,12 @@ namespace WebApp
             client.Credentials = new System.Net.NetworkCredential("adrian.lovi.39@gmail.com", "Jalv1304");
             client.EnableSsl = true;
             client.Send(mail);
+
+            // Clean fields.
+            txtName.Text = "";
+            txtEmail.Text = "";
+            txtPhone.Text = "";
+            fileResume.Dispose();
 
         }
 

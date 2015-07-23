@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
     
     <asp:Panel ID="Panel1" runat="server">
-        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID" ItemContainerId="SqlDataSource1" OnItemCommand="ListView1_OnItemCommand">
+        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID" ItemContainerId="SqlDataSource1" OnItemCommand="ListView1_OnItemCommand" OnSelectedIndexChanged="ListView1_SelectedIndexChanged1">
             <AlternatingItemTemplate>
 
                 <tr id="Tr2" style="background-color:#d1d1d1" runat="server">
