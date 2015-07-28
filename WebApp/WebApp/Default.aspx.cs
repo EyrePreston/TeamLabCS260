@@ -41,6 +41,16 @@ namespace WebApp
 
         }
 
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void filterList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlDataSource1.SelectCommand = "SELECT * FROM [internshipLDSBC].[dbo].[Job] WHERE Category=" + filterList.SelectedValue;
+        }
+
     }
 
 }

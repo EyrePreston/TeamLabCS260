@@ -3,6 +3,15 @@
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
     
     <asp:Panel ID="Panel1" runat="server">
+        <asp:DropDownList ID="filterList" runat="server" OnSelectedIndexChanged="filterList_SelectedIndexChanged" AutoPostBack="true">
+            <asp:ListItem>Category</asp:ListItem>
+            <asp:ListItem>Accounting</asp:ListItem>
+            <asp:ListItem>Business</asp:ListItem>
+            <asp:ListItem>Information Technology</asp:ListItem>
+            <asp:ListItem>Medical</asp:ListItem>
+            <asp:ListItem>Social</asp:ListItem>
+        </asp:DropDownList>
+
         <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID" ItemContainerId="SqlDataSource1" OnItemCommand="ListView1_OnItemCommand" OnSelectedIndexChanged="ListView1_SelectedIndexChanged1">
             <AlternatingItemTemplate>
 
@@ -44,6 +53,9 @@
                         <br />
                         <b>Openings: </b>
                         <asp:Label ID="OpeningsLabel" runat="server" Text='<%# Eval("Openings") %>' />
+                        <br />
+                        <b>Category: </b>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("Category") %>' />
                     </td>
                     <td>
                         <asp:Button ID="ApplyButton" runat="server" Text="Apply" />
@@ -91,6 +103,9 @@
                         <br />
                         Openings:
                         <asp:TextBox ID="OpeningsTextBox" runat="server" Text='<%# Bind("Openings") %>' />
+                        <br />
+                        <b>Category: </b>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("Category") %>' />
                     </td>
                     <td>
                         <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
@@ -139,6 +154,9 @@
                         <br />
                         Openings:
                         <asp:TextBox ID="OpeningsTextBox" runat="server" Text='<%# Bind("Openings") %>' />
+                        <br />
+                        <b>Category: </b>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("Category") %>' />
                     </td>
                     <td>
                         <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
@@ -187,6 +205,9 @@
                         <br />
                         <b>Openings: </b>
                         <asp:Label ID="OpeningsLabel" runat="server" Text='<%# Eval("Openings") %>' />
+                        <br />
+                        <b>Category: </b>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("Category") %>' />
                     </td>
                     <td>
                         <asp:Button ID="ApplyButton" runat="server" Text="Apply" />
@@ -254,6 +275,9 @@
                         <br />
                         Openings:
                         <asp:Label ID="OpeningsLabel" runat="server" Text='<%# Eval("Openings") %>' />
+                        <br />
+                        <b>Category: </b>
+                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("Category") %>' />
                     </td>
                     <td>
                         
@@ -310,7 +334,7 @@
 
 
     </asp:Panel>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" SelectCommand="SELECT * FROM [Job]" ProviderName="System.Data.SqlClient">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" SelectCommand="SELECT * FROM [Job]" OnSelecting="SqlDataSource1_Selecting">
     </asp:SqlDataSource>
 
 </asp:Content>
