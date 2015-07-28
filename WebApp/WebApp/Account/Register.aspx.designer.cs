@@ -7,13 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp.Account
-{
-
-
-    public partial class Register
-    {
-
+namespace WebApp.Account {
+    
+    
+    public partial class Register {
+        
+        /// <summary>
+        /// Panel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel2;
+        
+        /// <summary>
+        /// RoleCheck control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList RoleCheck;
+        
+        /// <summary>
+        /// StudentPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel StudentPanel;
+        
+        /// <summary>
+        /// CompanyPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel CompanyPanel;
+        
         /// <summary>
         /// RegisterUser control.
         /// </summary>
@@ -22,7 +56,7 @@ namespace WebApp.Account
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CreateUserWizard RegisterUser;
-
+        
         /// <summary>
         /// RegisterUserWizardStep control.
         /// </summary>

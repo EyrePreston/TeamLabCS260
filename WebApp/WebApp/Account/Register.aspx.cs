@@ -19,6 +19,24 @@ namespace WebApp.Account
             RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
         }
 
+        //Method used to change visibility when the company button is pressed.
+        protected void RoleCheck_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (this.RoleCheck.SelectedValue == "1")
+            {
+                StudentPanel.Visible = true;
+                CompanyPanel.Visible = false;
+            }
+            else if (this.RoleCheck.SelectedValue == "2")
+            {
+                CompanyPanel.Visible = true;
+                StudentPanel.Visible = false;
+            }
+        }
+
+        
+
         //Method that causes the sender to use the email to be the same as the username.
         protected void RegisterUser_CreatingUser(object sender, EventArgs e)
         {
@@ -32,6 +50,8 @@ namespace WebApp.Account
             // Cookie.
             FormsAuthentication.SetAuthCookie(RegisterUser.UserName, createPersistentCookie: false);
 
+            //Add's user to roles.
+            Roles.AddUserToRole(((TextBox)RegisterUser.CreateUserStep.ContentTemplateContainer.FindControl("UserName")).Text, "Company");
             
             //Sam added this code to add company data to the company table.
             SqlConnection cn = new SqlConnection(WebConfigurationManager.ConnectionStrings["internshipLDSBCConnectionString"].ToString());
