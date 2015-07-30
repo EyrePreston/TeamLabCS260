@@ -88,7 +88,7 @@
                 <asp:TextBox ID="OpeningsTextBox" runat="server" Text='<%# Bind("Openings") %>' />
                 <br />
                 <br />
-                Category:<asp:DropDownList ID="DropDownList1" runat="server" SelectedValue='<%# Bind("Category") %>'  >
+                Category:<asp:DropDownList ID="DropDownList1" SelectedValue='<%# Bind("Category") %>' runat="server">
                     <asp:ListItem>Category</asp:ListItem>
                     <asp:ListItem>Accounting</asp:ListItem>
                     <asp:ListItem>Business</asp:ListItem>
@@ -117,8 +117,9 @@
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" Width="700px" AutoGenerateColumns="False" DataKeyNames="ID" >
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
-            <asp:BoundField DataField="JobTitle" HeaderText="JobTitle" SortExpression="JobTitle" />
+            <asp:BoundField DataField="JobTitle" HeaderText="JobTitle" SortExpression="Job Title" />
             <asp:BoundField DataField="CompanyID" HeaderText="CompanyID" SortExpression="CompanyID" />
             <asp:BoundField DataField="Postion" HeaderText="Postion" SortExpression="Postion" />
             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
