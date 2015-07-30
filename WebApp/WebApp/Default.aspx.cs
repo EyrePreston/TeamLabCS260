@@ -48,7 +48,13 @@ namespace WebApp
 
         protected void filterList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Display filter records.
             SqlDataSource1.SelectCommand = "SELECT * FROM [internshipLDSBC].[dbo].[Job] WHERE Category='" + filterList.SelectedValue + "'";
+            // Display all records.
+            if (filterList.SelectedValue == "Category")
+            {
+                SqlDataSource1.SelectCommand = "SELECT * FROM [internshipLDSBC].[dbo].[Job]";
+            }
         }
 
     }

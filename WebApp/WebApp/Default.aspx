@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
     
     <asp:Panel ID="Panel1" runat="server">
-        <asp:DropDownList ID="filterList" runat="server" OnSelectedIndexChanged="filterList_SelectedIndexChanged" AutoPostBack="true">
-            <asp:ListItem>Category</asp:ListItem>
+        <asp:DropDownList ID="filterList" runat="server" OnSelectedIndexChanged="filterList_SelectedIndexChanged" AutoPostBack="True">
+            <asp:ListItem Value="Category">Category</asp:ListItem>
             <asp:ListItem>Accounting</asp:ListItem>
             <asp:ListItem>Business</asp:ListItem>
             <asp:ListItem>Information Technology</asp:ListItem>
