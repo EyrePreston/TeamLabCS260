@@ -48,7 +48,7 @@ namespace WebApp
 
         protected void filterList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlDataSource1.SelectCommand = "SELECT * FROM [internshipLDSBC].[dbo].[Job] WHERE Category=" + filterList.SelectedValue;
+            SqlDataSource1.SelectCommand = "SELECT * FROM [internshipLDSBC].[dbo].[Job] WHERE Category='" + filterList.SelectedValue + "'";
         }
 
     }
