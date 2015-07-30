@@ -11,13 +11,22 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (GridView1.Rows.Count > 0)
+            {
+                FormView2.DefaultMode = FormViewMode.Insert;
+            }
+            else
+            {
+                FormView2.DefaultMode = FormViewMode.ReadOnly;
+            }
         }
 
         protected void FormView1_PageIndexChanging(object sender, FormViewPageEventArgs e)
         {
 
         }
+
+      
 
        
     }

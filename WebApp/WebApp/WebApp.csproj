@@ -134,6 +134,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Admin\adminPage.aspx" />
     <Content Include="ApplicationForm.aspx" />
     <Content Include="CompnayHomePage.aspx">
       <BrowseToURL>~/CompnayHomePage.aspx</BrowseToURL>
@@ -259,6 +260,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\adminPage.aspx.cs">
+      <DependentUpon>adminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\adminPage.aspx.designer.cs">
+      <DependentUpon>adminPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationForm.aspx.cs">
       <DependentUpon>ApplicationForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

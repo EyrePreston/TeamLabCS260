@@ -77,6 +77,7 @@
                 <br />
                 ContactPhone:
                 <asp:TextBox ID="ContactPhoneTextBox" runat="server" Text='<%# Bind("ContactPhone") %>' />
+                <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender1" runat="server" TargetControlID="ContactPhoneTextBox" Mask="(999)999-9999" />
                 <br />
                 ContactEmail:
                 <asp:TextBox ID="ContactEmailTextBox" runat="server" Text='<%# Bind("ContactEmail") %>' />
