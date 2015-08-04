@@ -40,7 +40,7 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">
-                    <a runat="server" href="~/"><img src="LDSBC_Medallion_Logo.png" /></a>
+                    <a runat="server" href="~/"><img src="LDSBC_Medallion_Logo.png" style="height: 160px" /></a>
                 </p>
             </div>
             <div class="float-right">
@@ -64,11 +64,11 @@
                 <nav>
                     <ul id="menu">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/CompnayHomePage.aspx">Company Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/CompnayHomePage.aspx">Company</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="internshipEntry.aspx">Rate Intern</a></li>
                         <li><a runat="server" href="ratingTable.aspx">Rating Table</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
                     </ul>
                 </nav>
                 <%--Admin menu--%>
