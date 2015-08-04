@@ -27,8 +27,8 @@ namespace WebApp
             SqlDataReader reader = command.ExecuteReader();
 
             reader.Read();
-            lblJobTitle.Text = reader["JobTitle"].ToString();
-            lblPosition.Text = reader["Postion"].ToString();
+            lblJobTitle.Text = "Job Title: " + reader["JobTitle"].ToString();
+            lblPosition.Text = "Position:" + reader["Postion"].ToString();
             companyID = (int) reader["CompanyID"];
             connection.Close();
 
@@ -37,7 +37,7 @@ namespace WebApp
             SqlDataReader reader2 = getInfoFromCompany.ExecuteReader();
 
             reader2.Read();
-            lblCompany.Text = reader2["CompanyName"].ToString();
+            lblCompany.Text = "Company: " + reader2["CompanyName"].ToString();
             connection.Close();
 
 
