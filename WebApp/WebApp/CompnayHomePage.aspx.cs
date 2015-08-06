@@ -26,8 +26,12 @@ namespace WebApp
 
         }
 
-      
+        
 
+
+      
+ //Response.Redirect("ratingTable.aspx");
+            //<a runat="server" href="ratingTable.aspx"></a>;
        
     }
 }
