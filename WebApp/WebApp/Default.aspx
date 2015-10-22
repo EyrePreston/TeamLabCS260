@@ -1,9 +1,9 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApp._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="~/Default.aspx.cs" CodeBehind="~/Default.aspx.cs" Inherits="WebApp._Default" %>
 
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
     
     <asp:Panel ID="Panel1" runat="server">
-        <asp:DropDownList ID="filterList" runat="server" OnSelectedIndexChanged="filterList_SelectedIndexChanged" AutoPostBack="True">
+        <asp:DropDownList ID="filterList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="filterList_SelectedIndexChanged">
             <asp:ListItem Value="Category">Category</asp:ListItem>
             <asp:ListItem>Accounting</asp:ListItem>
             <asp:ListItem>Business</asp:ListItem>
@@ -12,19 +12,19 @@
             <asp:ListItem>Social</asp:ListItem>
         </asp:DropDownList>
 
-        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID" ItemContainerId="SqlDataSource1" OnItemCommand="ListView1_OnItemCommand" OnSelectedIndexChanged="ListView1_SelectedIndexChanged1">
+        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID" ItemContainerId="SqlDataSource1" OnItemCommand="ListView1_OnItemCommand">
             <AlternatingItemTemplate>
 
                 <tr id="Tr2" style="background-color:#d1d1d1" runat="server">
                     <td>
-                        <b>ID: </b>
-                        <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
+                        
+                        <%--<asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />--%>
                         <br />
                         <b>Job Title: </b>
                         <asp:Label ID="Job_TitleLabel" runat="server" Text='<%# Eval("JobTitle") %>' />
                         <br />
-                        <b>CompanyID: </b>
-                        <asp:Label ID="CompanyIDLabel" runat="server" Text='<%# Eval("CompanyID") %>' />
+                        
+                        <%--<asp:Label ID="CompanyIDLabel" runat="server" Text='<%# Eval("CompanyID") %>' />--%>
                         <br />
                         <b>Postion: </b>
                         <asp:Label ID="PostionLabel" runat="server" Text='<%# Eval("Postion") %>' />
@@ -39,14 +39,14 @@
                         <asp:Label ID="EndDateLabel" runat="server" Text='<%# Eval("EndDate") %>' />
                     </td>
                     <td>
-                        <b>ContactName: </b>
-                        <asp:Label ID="ContactNameLabel" runat="server" Text='<%# Eval("ContactName") %>' />
+                        
+                        <%--<asp:Label ID="ContactNameLabel" runat="server" Text='<%# Eval("ContactName") %>' />--%>
                         <br />
-                        <b>ContactPhone: </b>
-                        <asp:Label ID="ContactPhoneLabel" runat="server" Text='<%# Eval("ContactPhone") %>' />
+                        
+                        <%--<asp:Label ID="ContactPhoneLabel" runat="server" Text='<%# Eval("ContactPhone") %>' />--%>
                         <br />
-                        <b>ContactEmail: </b>
-                        <asp:Label ID="ContactEmailLabel" runat="server" Text='<%# Eval("ContactEmail") %>' />
+                        
+                        <%--<asp:Label ID="ContactEmailLabel" runat="server" Text='<%# Eval("ContactEmail") %>' />--%>
                         <br />
                         <b>Status: </b>
                         <asp:Label ID="StatusLabel" runat="server" Text='<%# Eval("Status") %>' />
@@ -169,14 +169,14 @@
 
                 <tr id="Tr2" runat="server">
                     <td>
-                        <b>ID: </b>
-                        <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
+                        <%--<b>ID: </b>
+                        <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' /> --%>
                         <br />
                         <b>Job Title: </b>
                         <asp:Label ID="Job_TitleLabel" runat="server" Text='<%# Eval("JobTitle") %>' />
                         <br />
-                        <b>CompanyID: </b>
-                        <asp:Label ID="CompanyIDLabel" runat="server" Text='<%# Eval("CompanyID") %>' />
+                        <%--<b>CompanyID: </b>--%>
+                        <%--<asp:Label ID="CompanyIDLabel" runat="server" Text='<%# Eval("CompanyID") %>' />--%>
                         <br />
                         <b>Postion: </b>
                         <asp:Label ID="PostionLabel" runat="server" Text='<%# Eval("Postion") %>' />
@@ -191,14 +191,14 @@
                         <asp:Label ID="EndDateLabel" runat="server" Text='<%# Eval("EndDate") %>' />
                     </td>
                     <td>
-                        <b>ContactName: </b>
+                        <%--<b>ContactName: </b>
                         <asp:Label ID="ContactNameLabel" runat="server" Text='<%# Eval("ContactName") %>' />
                         <br />
                         <b>ContactPhone: </b>
                         <asp:Label ID="ContactPhoneLabel" runat="server" Text='<%# Eval("ContactPhone") %>' />
                         <br />
                         <b>ContactEmail: </b>
-                        <asp:Label ID="ContactEmailLabel" runat="server" Text='<%# Eval("ContactEmail") %>' />
+                        <asp:Label ID="ContactEmailLabel" runat="server" Text='<%# Eval("ContactEmail") %>' />--%>
                         <br />
                         <b>Status: </b>
                         <asp:Label ID="StatusLabel" runat="server" Text='<%# Eval("Status") %>' />
@@ -334,7 +334,7 @@
 
 
     </asp:Panel>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" SelectCommand="SELECT * FROM [Job]" OnSelecting="SqlDataSource1_Selecting">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" SelectCommand="SELECT * FROM [Job]" >
     </asp:SqlDataSource>
 
 </asp:Content>

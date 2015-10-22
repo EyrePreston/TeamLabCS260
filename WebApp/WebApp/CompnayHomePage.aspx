@@ -1,11 +1,16 @@
 ﻿<%@ Page Title="Company Name " Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CompnayHomePage.aspx.cs" Inherits="WebApp.CompnayHomePage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server" >
     
+ 
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
    
     </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server" Visible="true">
+   
+    <asp:Label runat="server" ID="CompanyTitle" Text='<%# Bind("CompanyID") %>'></asp:Label>
+
     <asp:FormView ID="FormView2" runat="server" CellPadding="4" ForeColor="#333333" DataSourceID="SqlDataSource1" >
         
         <EditRowStyle BackColor="#999999" />
@@ -47,7 +52,7 @@
            
              <asp:label runat="server" />
            
-           <asp:Button ID="NewButton" runat="server" Text="Post a Internship" CommandName="New" />
+           <asp:Button ID="NewButton" runat="server" Text="Post a Internship" CommandName="New" class="btn btn-primary" />
 
         </ItemTemplate>
        <InsertItemTemplate>
@@ -114,21 +119,22 @@
         <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
     </asp:FormView>
     
-
+    <asp:Button ID="EmailButton" runat="server" CommandName="Email" Text="Email Career Department" CssClass="Email Button" />
+   
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" Width="700px" AutoGenerateColumns="False" DataKeyNames="ID" >
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
             <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
-            <asp:BoundField DataField="JobTitle" HeaderText="JobTitle" SortExpression="Job Title" />
-            <asp:BoundField DataField="CompanyID" HeaderText="CompanyID" SortExpression="CompanyID" />
+            <asp:BoundField DataField="JobTitle" HeaderText="Job Title" SortExpression="Job Title" />
+            <asp:BoundField DataField="CompanyID" HeaderText="Company ID" SortExpression="CompanyID" />
             <asp:BoundField DataField="Postion" HeaderText="Postion" SortExpression="Postion" />
             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-            <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
-            <asp:BoundField DataField="EndDate" HeaderText="EndDate" SortExpression="EndDate" />
-            <asp:BoundField DataField="ContactName" HeaderText="ContactName" SortExpression="ContactName" />
-            <asp:BoundField DataField="ContactPhone" HeaderText="ContactPhone" SortExpression="ContactPhone" />
-            <asp:BoundField DataField="ContactEmail" HeaderText="ContactEmail" SortExpression="ContactEmail" />
+            <asp:BoundField DataField="StartDate" HeaderText="Start Date" SortExpression="StartDate" />
+            <asp:BoundField DataField="EndDate" HeaderText="End Date" SortExpression="EndDate" />
+            <asp:BoundField DataField="ContactName" HeaderText="Contact Name" SortExpression="ContactName" />
+            <asp:BoundField DataField="ContactPhone" HeaderText="Contact Phone" SortExpression="ContactPhone" />
+            <asp:BoundField DataField="ContactEmail" HeaderText="Contact Email" SortExpression="ContactEmail" />
             <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
             <asp:BoundField DataField="Openings" HeaderText="Openings" SortExpression="Openings" />
             <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />

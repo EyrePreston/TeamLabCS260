@@ -13,6 +13,15 @@ namespace WebApp {
     public partial class CompnayHomePage {
         
         /// <summary>
+        /// CompanyTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CompanyTitle;
+        
+        /// <summary>
         /// FormView2 control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace WebApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FormView FormView2;
+        
+        /// <summary>
+        /// EmailButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EmailButton;
         
         /// <summary>
         /// GridView1 control.

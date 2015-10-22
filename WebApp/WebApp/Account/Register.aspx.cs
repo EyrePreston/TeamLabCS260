@@ -17,6 +17,7 @@ namespace WebApp.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
+            
         }
 
         //Method used to change visibility when the company button is pressed.
@@ -88,6 +89,19 @@ namespace WebApp.Account
         {
             
 
+        }
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.UserSelect.SelectedValue == "1")
+            {
+                StudentPanel.Visible = true;
+                CompanyPanel.Visible = false;
+            }
+            else if (this.UserSelect.SelectedValue == "2")
+            {
+                CompanyPanel.Visible = true;
+                StudentPanel.Visible = false;
+            }
         }
     }
 }

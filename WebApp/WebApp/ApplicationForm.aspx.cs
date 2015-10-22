@@ -71,8 +71,8 @@ namespace WebApp
             }
 
             mail.Subject = "Test Subject";
-            mail.From = new MailAddress("adrian.lovi.39@gmail.com");
-            mail.To.Add("adrian.lovi.39@gmail.com");
+            mail.From = new MailAddress("prestoneyre12@gmail.com");
+            mail.To.Add("prestoneyre12@gmail.com");
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
             client.Credentials = new System.Net.NetworkCredential("adrian.lovi.39@gmail.com", "Jalv1304");
             client.EnableSsl = true;

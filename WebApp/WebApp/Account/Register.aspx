@@ -4,13 +4,20 @@
     <hgroup class="title">
         <h1><%: Title %></h1>
     </hgroup>
-    <asp:Panel ID="Panel2" runat="server">
-        <asp:RadioButtonList ID="RoleCheck" runat="server" AutoPostBack="true" OnSelectedIndexChanged="RoleCheck_SelectedIndexChanged" >
+    <%--<asp:Panel ID="Panel2" runat="server">
+        <asp:RadioButtonList ID="RoleCheck" runat="server" OnSelectedIndexChanged="RoleCheck_SelectedIndexChanged1">
             <asp:ListItem Text="Student" Value="1"/>
             <asp:ListItem Text="Company" Value="2"/>
         </asp:RadioButtonList>
-    </asp:Panel>
+    </asp:Panel>--%>
+     <asp:Panel ID="Panel2" runat="server">
+            <asp:RadioButtonList ID="UserSelect" runat="server" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
+                <asp:ListItem Value="1">Student</asp:ListItem>
+                <asp:ListItem Value="2">Company</asp:ListItem>
+            </asp:RadioButtonList>
+        </asp:Panel>
     <asp:Panel ID="StudentPanel" runat="server">
+       
         <asp:Label runat ="server"><h1>Student Panel Here</h1></asp:Label>
     </asp:Panel>
     <asp:Panel ID="CompanyPanel" runat="server" Visible="false">

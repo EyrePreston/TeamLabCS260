@@ -25,7 +25,7 @@ namespace WebApp {
              * Sams sql path =
              * Adrians sql path =
             */
-            SqlConnection cn = new SqlConnection(@"Data Source=WIN-H2I8SPBN92E\CS260FIRST;Initial Catalog=internshipLDSBC;Persist Security Info=True;User ID=internUser;Password=ldsbc");
+            SqlConnection cn = new SqlConnection(@"PRESTONEYRE\SQLEXPRESS; Initial Catalog=internshipLDSBC; User ID=ldsbcUser; Password=ldsbc");
             cn.Open();
 
             // SQL query.
