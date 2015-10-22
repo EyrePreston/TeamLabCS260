@@ -8,14 +8,9 @@
    
     </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server" Visible="true">
-<<<<<<< HEAD
-   
-    <asp:Label runat="server" ID="CompanyTitle" Text='<%# Bind("CompanyID") %>'></asp:Label>
 
-    <asp:FormView ID="FormView2" runat="server" CellPadding="4" ForeColor="#333333" DataSourceID="SqlDataSource1" >
-=======
     <asp:FormView ID="FormView2" runat="server" CellPadding="4" ForeColor="#333333" DataSourceID="SqlDataSource1" DefaultMode="Insert" >
->>>>>>> origin/master
+
         
         <EditRowStyle BackColor="#999999" />
         
@@ -123,14 +118,10 @@
         <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
     </asp:FormView>
     
-<<<<<<< HEAD
-    <asp:Button ID="EmailButton" runat="server" CommandName="Email" Text="Email Career Department" CssClass="Email Button" />
-   
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" Width="700px" AutoGenerateColumns="False" DataKeyNames="ID" >
-=======
+
 
 &nbsp;<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" Width="700px" AutoGenerateColumns="False" DataKeyNames="ID" >
->>>>>>> origin/master
+
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />

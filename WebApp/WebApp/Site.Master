@@ -51,14 +51,11 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">
-<<<<<<< HEAD
+
                     <a runat="server" href="~/"><img src="LDSBC_Medallion_Logo.png" style="height: 160px; width: 172px" /></a>
                 </p>
             </div>
-                <asp:Panel ID="Panel1" runat="server" Height="69px">
-=======
-                    <a runat="server" href="~/"><img src="LDSBC_Medallion_Logo.png" style="height: 160px" /></a>
-                </p>
+                
             </div>
             <div class="float-right">
                 <section id="login">
@@ -89,9 +86,10 @@
                     </ul>
                 </nav>
                 <%--Admin menu--%>
+                </header>
                 <nav>
->>>>>>> origin/master
-                    <ul id="menu">
+
+                   <%-- <ul id="menu">
                         <nav>
                             <div class="float-right">
                                 <section id="login">
@@ -122,13 +120,15 @@
                                         <li><a runat="server" href="ratingTable.aspx">Rating Table</a></li>
                                     </ul>
                                 </nav>
-                                <%--Admin menu--%>
+                                
                             </div>
                         </nav>
-                    </ul>
-                </asp:Panel>
+                    </ul>--%>
+                <%--</nav>--%>
+                
         </div>
     </header>
+    
     <div id="body">
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         <section class="content-wrapper main-content clear-fix">
@@ -136,6 +136,7 @@
 
     
          </section>
+        
           <%-- <div class="content-wrapper">
             <div class="float-left">
             </div>
