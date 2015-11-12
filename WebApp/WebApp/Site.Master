@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApp.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApp.SiteMaster" ClientIDMode="Static" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +16,6 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
     <meta name="viewport" content="width=device-width" />
@@ -86,10 +83,10 @@
                     </ul>
                 </nav>
                 <%--Admin menu--%>
-                </header>
+                <%--</header>
                 <nav>
 
-                   <%-- <ul id="menu">
+                    <ul id="menu">
                         <nav>
                             <div class="float-right">
                                 <section id="login">
@@ -123,7 +120,7 @@
                                 
                             </div>
                         </nav>
-                    </ul>--%>
+                    </ul>
                 <%--</nav>--%>
                 
         </div>
@@ -146,6 +143,8 @@
     </form>
    <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - LDSBC Career Center</p>
+       <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </footer>
         </body>
 </html>

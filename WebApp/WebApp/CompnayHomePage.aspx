@@ -120,7 +120,7 @@
     
 
 
-&nbsp;<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" Width="700px" AutoGenerateColumns="False" DataKeyNames="ID" >
+&nbsp;<asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" Width="859px" AutoGenerateColumns="False" DataKeyNames="ID" Height="354px" >
 
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
@@ -150,10 +150,10 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" DeleteCommand="DELETE FROM [Job] WHERE [ID] = @ID" InsertCommand="INSERT INTO [Job] ([JobTitle], [CompanyID], [Postion], [Description], [StartDate], [EndDate], [ContactName], [ContactPhone], [ContactEmail], [Status], [Openings], [Category]) VALUES (@JobTitle, @CompanyID, @Postion, @Description, @StartDate, @EndDate, @ContactName, @ContactPhone, @ContactEmail, @Status, @Openings, @Category)" SelectCommand="SELECT * FROM [Job] WHERE [CompanyID] = @SessionVar" UpdateCommand="UPDATE [Job] SET [JobTitle] = @JobTitle, [CompanyID] = @CompanyID, [Postion] = @Postion, [Description] = @Description, [StartDate] = @StartDate, [EndDate] = @EndDate, [ContactName] = @ContactName, [ContactPhone] = @ContactPhone, [ContactEmail] = @ContactEmail, [Status] = @Status, [Openings] = @Openings, [Category] = @Category WHERE [ID] = @ID">
-        <SelectParameters>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:internshipLDSBCConnectionString %>" SelectCommand="SELECT * FROM [Job]" ProviderName="System.Data.SqlClient">
+        <%--<SelectParameters>
             <asp:SessionParameter Name="SessionVar" SessionField="CompanyID" ConvertEmptyStringToNull="true" />
-        </SelectParameters>
+        </SelectParameters>--%>
         <DeleteParameters>
             <asp:Parameter Name="ID" Type="Int32"/>
 
@@ -187,5 +187,8 @@
             <asp:Parameter Name="Category" Type="String" />
             <asp:Parameter Name="ID" Type="Int32" />
         </UpdateParameters>
+    
+    
+    
     </asp:SqlDataSource>
 </asp:Content>
