@@ -48,49 +48,49 @@
         </Scripts>
     </asp:ScriptManager>
     <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title">
-<<<<<<< HEAD
-                    <a runat="server" href="~/"><img src="LDSBC_Medallion_Logo.png" style="height: 160px; width: 172px" /></a>
-                </p>
-            </div>
-                <asp:Panel ID="Panel1" runat="server" Height="69px">
-=======
-                    <a runat="server" href="~/"><img src="LDSBC_Medallion_Logo.png" style="height: 160px" /></a>
-                </p>
-            </div>
-            <div class="float-right">
-                <section id="login">
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul>
-                                <li><a id="registerLink" runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a id="loginLink" runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <p>
-                                Hello, <a runat="server" class="username" href="~/Account/Manage" title="Manage your account">
-                                    <asp:LoginName runat="server" CssClass="username" /></a>!
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
-                            </p>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
-                </section>
-                <nav>
-                    <ul id="menu">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/CompnayHomePage.aspx">Company</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="internshipEntry.aspx">Rate Intern</a></li>
-                        <li><a runat="server" href="ratingTable.aspx">Rating Table</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                    </ul>
-                </nav>
-                <%--Admin menu--%>
-                <nav>
->>>>>>> origin/master
+        
+       <asp:Panel ID="Panel1" runat="server" Height="200px">
+          <div class="content-wrapper">
+              <div class="float-left">
+                  <p class="site-title">
+                      <a runat="server" href="~/"><img src="LDSBC_Medallion_Logo.png" style="height: 160px; width: 172px" /></a>
+                 </p>
+              </div>
+
+          </div>
+            
+            <section id="login">
+                <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <ul>
+                            <li><a id="registerLink" runat="server" href="~/Account/Register">Register</a></li>
+                            <li><a id="loginLink" runat="server" href="~/Account/Login">Log in</a><ul id="menu">
+                                <li><a runat="server" href="~/">Home</a></li>
+                                <li><a runat="server" href="~/CompnayHomePage.aspx">Company</a></li>
+                                <li><a runat="server" href="~/Contact">Contact</a></li>
+                                <li><a runat="server" href="internshipEntry.aspx">Rate Intern</a></li>
+                                <li><a runat="server" href="ratingTable.aspx">Rating Table</a></li>
+                                <li><a runat="server" href="~/About">About</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <p>
+                            Hello, <a runat="server" class="username" href="~/Account/Manage" title="Manage your account">
+                            <asp:LoginName runat="server" CssClass="username" />
+                            </a>!
+                            <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutPageUrl="~/" LogoutText="Log off" />
+                        </p>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+           </section>
+           <div class="float-right">
+               <nav>
+               </nav>
+               <%--Admin menu--%>
+               <%--<nav>
+
                     <ul id="menu">
                         <nav>
                             <div class="float-right">
@@ -123,11 +123,10 @@
                                     </ul>
                                 </nav>
                                 <%--Admin menu--%>
-                            </div>
-                        </nav>
-                    </ul>
-                </asp:Panel>
-        </div>
+             </div>
+                   
+        </asp:Panel>
+       
     </header>
     <div id="body">
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
