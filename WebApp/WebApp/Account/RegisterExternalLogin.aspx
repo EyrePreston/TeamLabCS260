@@ -20,7 +20,9 @@
             <ol>
                 <li class="email">
                     <asp:Label runat="server" AssociatedControlID="userName">User name</asp:Label>
+                    <br />
                     <asp:TextBox runat="server" ID="userName" />
+                    <br />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="userName"
                         Display="Dynamic" ErrorMessage="User name is required" ValidationGroup="NewUser" />
                     

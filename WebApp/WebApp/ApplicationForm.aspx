@@ -13,6 +13,30 @@
         .auto-style9 {
             width: 1103px;
         }
+        .auto-style10 {
+            width: 139px;
+            height: 28px;
+        }
+        .auto-style11 {
+            width: 520px;
+            height: 28px;
+        }
+        .auto-style12 {
+            width: 1103px;
+            height: 28px;
+        }
+        .auto-style13 {
+            width: 139px;
+            height: 60px;
+        }
+        .auto-style14 {
+            width: 520px;
+            height: 60px;
+        }
+        .auto-style15 {
+            width: 1103px;
+            height: 60px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
@@ -42,29 +66,68 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style7">Phone Number</td>
-                <td class="auto-style8">
+                <td class="auto-style10">Phone Number</td>
+                <td class="auto-style11">
                     <asp:TextBox ID="txtPhone" runat="server" Width="350px"></asp:TextBox>
                 </td>
-                <td class="auto-style9">&nbsp;</td>
+                <td class="auto-style12"></td>
             </tr>
             <tr>
                 <td class="auto-style7">Attach Resume</td>
                 <td class="auto-style8">
-                    <asp:FileUpload ID="fileResume" runat="server" Width="520px" />
+                    <asp:FileUpload ID="fileResume" runat="server" Width="458px" />
+                </td>
+                <tr>
+            <td class="auto-style7">Days Available</td>
+                <td class="auto-style8">
+                    <asp:TextBox ID="TextBox5" runat="server" Width="350px"></asp:TextBox>
+                 <tr>
+            <td class="auto-style7">Hours Per Week</td>
+                <td class="auto-style8">
+                    <asp:TextBox ID="TextBox6" runat="server" Width="350px"></asp:TextBox>
                 </td>
                 <td class="auto-style9">&nbsp;</td>
             </tr>
-            <tr>
-                <td class="auto-style7">&nbsp;</td>
+             <td class="auto-style7">Skills</td>
                 <td class="auto-style8">
+                    <asp:TextBox ID="TextBox1" runat="server" Width="350px"></asp:TextBox>
+                </td>
+                <td class="auto-style9">&nbsp;</td>
+            <tr>
+            <td class="auto-style7">Strengths</td>
+                <td class="auto-style8">
+                    <asp:TextBox ID="TextBox2" runat="server" Width="350px"></asp:TextBox>
+                </td>
+                <tr>
+            <td class="auto-style7">Accomplishments</td>
+                <td class="auto-style8">
+                    <asp:TextBox ID="TextBox3" runat="server" Width="350px"></asp:TextBox>
+                </td>
+                    <tr>
+            <td class="auto-style7">Course of Study</td>
+                <td class="auto-style8">
+                    <asp:TextBox ID="TextBox4" runat="server" Width="350px"></asp:TextBox>
+                    <input type="radio" value="1 Year" />Year1
+                    <input type="radio" value="2 Years"/>Year2
+                    <tr>
+                  
+                </td>
+            <td class="auto-style7">Citizenship</td>
+                <td class="auto-style8">
+                    <input type="radio" value="U.S." />U.S.
+                    <input type="radio" value="International" />International
+                     
+                <td class="auto-style9">&nbsp;</td>
+            <tr>
+                <td class="auto-style13"></td>
+                <td class="auto-style14">
                     <asp:Label ID="lblJobTitle" runat="server" ></asp:Label>
                     <br />
                     <asp:Label ID="lblCompany" runat="server" ></asp:Label>
                     <br />
                     <asp:Label ID="lblPosition" runat="server" ></asp:Label>
                 </td>
-                <td class="auto-style9">&nbsp;</td>
+                <td class="auto-style15"></td>
             </tr>
             <tr>
                 <td class="auto-style7">

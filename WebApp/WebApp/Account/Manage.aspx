@@ -23,8 +23,11 @@
                 <ol>
                     <li>
                         <asp:Label runat="server" AssociatedControlID="password">Password</asp:Label>
+                        <br />
                         <asp:TextBox runat="server" ID="password" TextMode="Password" />
+                        <br />
                         <asp:RequiredFieldValidator runat="server" ControlToValidate="password"
+                            
                             CssClass="field-validation-error" ErrorMessage="The password field is required."
                             Display="Dynamic" ValidationGroup="SetPassword" />
                         
@@ -33,11 +36,15 @@
                         
                     </li>
                     <li>
+                        <br />
                         <asp:Label runat="server" AssociatedControlID="confirmPassword">Confirm password</asp:Label>
+                        <br />
                         <asp:TextBox runat="server" ID="confirmPassword" TextMode="Password" />
+                        <br />
                         <asp:RequiredFieldValidator runat="server" ControlToValidate="confirmPassword"
                             CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The confirm password field is required."
                             ValidationGroup="SetPassword" />
+      
                         <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="confirmPassword"
                             CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The password and confirmation password do not match."
                             ValidationGroup="SetPassword" />
@@ -59,24 +66,31 @@
                         <ol>
                             <li>
                                 <asp:Label runat="server" ID="CurrentPasswordLabel" AssociatedControlID="CurrentPassword">Current password</asp:Label>
+                                <br />
                                 <asp:TextBox runat="server" ID="CurrentPassword" CssClass="passwordEntry" TextMode="Password" />
+                                <br />
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="CurrentPassword"
                                     CssClass="field-validation-error" ErrorMessage="The current password field is required."
                                     ValidationGroup="ChangePassword" />
                             </li>
                             <li>
                                 <asp:Label runat="server" ID="NewPasswordLabel" AssociatedControlID="NewPassword">New password</asp:Label>
+                                <br />
                                 <asp:TextBox runat="server" ID="NewPassword" CssClass="passwordEntry" TextMode="Password" />
+                                <br />
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="NewPassword"
                                     CssClass="field-validation-error" ErrorMessage="The new password is required."
                                     ValidationGroup="ChangePassword" />
                             </li>
                             <li>
                                 <asp:Label runat="server" ID="ConfirmNewPasswordLabel" AssociatedControlID="ConfirmNewPassword">Confirm new password</asp:Label>
+                                <br />
                                 <asp:TextBox runat="server" ID="ConfirmNewPassword" CssClass="passwordEntry" TextMode="Password" />
+                                <br />
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmNewPassword"
                                     CssClass="field-validation-error" Display="Dynamic" ErrorMessage="Confirm new password is required."
                                     ValidationGroup="ChangePassword" />
+                                <br />
                                 <asp:CompareValidator runat="server" ControlToCompare="NewPassword" ControlToValidate="ConfirmNewPassword"
                                     CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The new password and confirmation password do not match."
                                     ValidationGroup="ChangePassword" />
