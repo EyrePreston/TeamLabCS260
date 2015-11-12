@@ -25,24 +25,34 @@ namespace WebApp {
              * Sams sql path =
              * Adrians sql path =
             */
-            SqlConnection cn = new SqlConnection(@"PRESTONEYRE\SQLEXPRESS; Initial Catalog=internshipLDSBC; User ID=ldsbcUser; Password=ldsbc");
+            SqlConnection cn = new SqlConnection(@"internshipLDSBCConnectionString");
             cn.Open();
 
             // SQL query.
-            SqlCommand cmd = new SqlCommand("INSERT INTO Rating (Com_ID, InternshipName, StudentName, Grade, Comments) VALUES (@Com_ID,@InternshipName,@StudentName,@Grade,@Comments)", cn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Rating (Com_ID, InternshipName, StudentName, Attendance, Comments, ValueStatement, Recomendation, Suggestions, JobExtended, EndEarly) VALUES (@Com_ID,@InternshipName,@StudentName,@Attendance,@Comments,@ValueStatement,@Recomendation,@Suggestions,@JobExtended,@EndEarly)", cn);
             // Get company ID from session.
             cmd.Parameters.AddWithValue("@Com_ID", 1);
             // Get values from textfields on page.
             cmd.Parameters.AddWithValue("@InternshipName", internshipName.Text);
+            cmd.Parameters.AddWithValue("@Attendance", Attendance.Text);
+            cmd.Parameters.AddWithValue("@ValueStatement", valueStatement.Text);
             cmd.Parameters.AddWithValue("@StudentName", studentName.Text);
-            cmd.Parameters.AddWithValue("@Grade", DropDownList1.Text);
+            cmd.Parameters.AddWithValue("@Recomendation", recommendation.Text);
+            cmd.Parameters.AddWithValue("@Suggestions", suggestions.Text);
+            cmd.Parameters.AddWithValue("@JobExtended", jobExtended.Text);
+            cmd.Parameters.AddWithValue("@EndEarly", endEarly.Text);
             cmd.Parameters.AddWithValue("@Comments", comments.Text);
             cmd.ExecuteNonQuery();
 
             // Clear fields after submitting.
             internshipName.Text = "";
             studentName.Text = "";
-            DropDownList1.Text = "A";
+            Attendance.Text = "";
+            valueStatement.Text = "";
+            recommendation.Text = "";
+            suggestions.Text = "";
+            jobExtended.Text = "";
+            endEarly.Text = "";
             comments.Text = "";
         }
 

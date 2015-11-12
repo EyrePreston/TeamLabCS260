@@ -52,15 +52,15 @@
             <div class="form-group">
                Was a Job offer extended? 
                 <br /> 
-               <asp:RadioButtonList ID="jobExtended" runat="server" >
-                   <asp:ListItem>Yes</asp:ListItem>
-                   <asp:ListItem>No</asp:ListItem>
-               </asp:RadioButtonList>
+                <asp:TextBox ID="jobExtended" runat="server" Width="170px"></asp:TextBox>
                
             </div>
 
-
-
+            <div class="form-group">
+                Did Internship End Early?
+                <br />
+                <asp:TextBox ID="endEarly" runat="server" Width="170px" Text="If So Why?"></asp:TextBox>
+            </div>
 
             <div class="form-group">
             <br />

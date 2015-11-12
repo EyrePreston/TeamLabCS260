@@ -73,7 +73,16 @@ namespace WebApp {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList jobExtended;
+        protected global::System.Web.UI.WebControls.TextBox jobExtended;
+        
+        /// <summary>
+        /// endEarly control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox endEarly;
         
         /// <summary>
         /// comments control.
