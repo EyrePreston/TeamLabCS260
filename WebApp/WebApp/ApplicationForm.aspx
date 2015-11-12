@@ -73,6 +73,17 @@
                 <td class="auto-style12"></td>
             </tr>
             <tr>
+                <td>
+
+                </td>
+
+
+            </tr>
+
+
+
+
+            <tr>
                 <td class="auto-style7">Attach Resume</td>
                 <td class="auto-style8">
                     <asp:FileUpload ID="fileResume" runat="server" Width="458px" />

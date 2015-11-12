@@ -3,7 +3,9 @@
 <asp:Content ID="Content1" runat="server" contentplaceholderid="MainContent">
     
     <asp:Panel ID="Panel1" runat="server">
-        <asp:DropDownList ID="filterList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="filterList_SelectedIndexChanged">
+        <div class="dropdown">
+            <%--<asp:Button ID="dropButton" runat="server" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  <span class="caret"></span>--%> 
+        <asp:DropDownList ID="filterList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="filterList_SelectedIndexChanged" CssClass="dropdown-menu-left" aria-labelledby="">
             <asp:ListItem Value="Category">Category</asp:ListItem>
             <asp:ListItem>Accounting</asp:ListItem>
             <asp:ListItem>Business</asp:ListItem>
@@ -11,11 +13,12 @@
             <asp:ListItem>Medical</asp:ListItem>
             <asp:ListItem>Social</asp:ListItem>
         </asp:DropDownList>
-
-        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID" ItemContainerId="SqlDataSource1" OnItemCommand="ListView1_OnItemCommand">
+        </div>
+        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID" ItemContainerId="SqlDataSource1" OnItemCommand="ListView1_OnItemCommand" >
             <AlternatingItemTemplate>
-
-                <tr id="Tr2" style="background-color:#d1d1d1" runat="server">
+                <div class="table-responsive" >
+                <table id="altTable" class="table table-hover">
+                <tr id="Tr2" style="background-color:#d1d1d1" runat="server" >
                     <td>
                         
                         <%--<asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />--%>
@@ -61,7 +64,8 @@
                         <asp:Button ID="ApplyButton" runat="server" Text="Apply" />
                     </td>
                 </tr>
-
+            </table>
+            </div>
             </AlternatingItemTemplate>
             <EditItemTemplate>
 
@@ -159,61 +163,64 @@
                         <asp:Label ID="Label2" runat="server" Text='<%# Eval("Category") %>' />
                     </td>
                     <td>
-                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" CssClass="" />
                         <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
                     </td>
                 </tr>
 
             </InsertItemTemplate>
             <ItemTemplate>
-
-                <tr id="Tr2" runat="server">
-                    <td>
-                        <%--<b>ID: </b>
-                        <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' /> --%>
-                        <br />
-                        <b>Job Title: </b>
-                        <asp:Label ID="Job_TitleLabel" runat="server" Text='<%# Eval("JobTitle") %>' />
-                        <br />
-                        <%--<b>CompanyID: </b>--%>
-                        <%--<asp:Label ID="CompanyIDLabel" runat="server" Text='<%# Eval("CompanyID") %>' />--%>
-                        <br />
-                        <b>Postion: </b>
-                        <asp:Label ID="PostionLabel" runat="server" Text='<%# Eval("Postion") %>' />
-                        <br />
-                        <b>Description: </b>
-                        <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
-                        <br />
-                        <b>StartDate: </b>
-                        <asp:Label ID="StartDateLabel" runat="server" Text='<%# Eval("StartDate") %>' />
-                        <br />
-                        <b>EndDate: </b>
-                        <asp:Label ID="EndDateLabel" runat="server" Text='<%# Eval("EndDate") %>' />
-                    </td>
-                    <td>
-                        <%--<b>ContactName: </b>
-                        <asp:Label ID="ContactNameLabel" runat="server" Text='<%# Eval("ContactName") %>' />
-                        <br />
-                        <b>ContactPhone: </b>
-                        <asp:Label ID="ContactPhoneLabel" runat="server" Text='<%# Eval("ContactPhone") %>' />
-                        <br />
-                        <b>ContactEmail: </b>
-                        <asp:Label ID="ContactEmailLabel" runat="server" Text='<%# Eval("ContactEmail") %>' />--%>
-                        <br />
-                        <b>Status: </b>
-                        <asp:Label ID="StatusLabel" runat="server" Text='<%# Eval("Status") %>' />
-                        <br />
-                        <b>Openings: </b>
-                        <asp:Label ID="OpeningsLabel" runat="server" Text='<%# Eval("Openings") %>' />
-                        <br />
-                        <b>Category: </b>
-                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("Category") %>' />
-                    </td>
-                    <td>
-                        <asp:Button ID="ApplyButton" runat="server" Text="Apply" />
-                    </td>
-                </tr>
-
+                
+                <div class="table-responsive">
+                    <table id="itemTable" class="table">
+                        <tr id="Tr2" runat="server">
+                            <td>
+                                <%--<b>ID: </b>
+                                <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' /> --%>
+                                <br />
+                                <b>Job Title: </b>
+                                <asp:Label ID="Job_TitleLabel" runat="server" Text='<%# Eval("JobTitle") %>' />
+                                <br />
+                                <%--<b>CompanyID: </b>--%>
+                                <%--<asp:Label ID="CompanyIDLabel" runat="server" Text='<%# Eval("CompanyID") %>' />--%>
+                                <br />
+                                <b>Postion: </b>
+                                <asp:Label ID="PostionLabel" runat="server" Text='<%# Eval("Postion") %>' />
+                                <br />
+                                <b>Description: </b>
+                                <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
+                                <br />
+                                <b>StartDate: </b>
+                                <asp:Label ID="StartDateLabel" runat="server" Text='<%# Eval("StartDate") %>' />
+                                <br />
+                                <b>EndDate: </b>
+                                <asp:Label ID="EndDateLabel" runat="server" Text='<%# Eval("EndDate") %>' />
+                            </td>
+                            <td>
+                                <%--<b>ContactName: </b>
+                                <asp:Label ID="ContactNameLabel" runat="server" Text='<%# Eval("ContactName") %>' />
+                                <br />
+                                <b>ContactPhone: </b>
+                                <asp:Label ID="ContactPhoneLabel" runat="server" Text='<%# Eval("ContactPhone") %>' />
+                                <br />
+                                <b>ContactEmail: </b>
+                                <asp:Label ID="ContactEmailLabel" runat="server" Text='<%# Eval("ContactEmail") %>' />--%>
+                                <br />
+                                <b>Status: </b>
+                                <asp:Label ID="StatusLabel" runat="server" Text='<%# Eval("Status") %>' />
+                                <br />
+                                <b>Openings: </b>
+                                <asp:Label ID="OpeningsLabel" runat="server" Text='<%# Eval("Openings") %>' />
+                                <br />
+                                <b>Category: </b>
+                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("Category") %>' />
+                            </td>
+                            <td>
+                                <asp:Button ID="ApplyButton" runat="server" Text="Apply" />
+                            </td>
+                        </tr>
+                      </table>
+                    </div>
             </ItemTemplate>
             <LayoutTemplate>
 
