@@ -217,7 +217,6 @@
     <Content Include="Images\orderedList9.png" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
-    <Content Include="internshipEntry.aspx" />
     <Content Include="LDSBC_Medallion_Logo.png" />
     <Content Include="MemberPages\members.aspx" />
     <Content Include="packages.config" />
@@ -348,13 +347,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="internshipEntry.aspx.cs">
-      <DependentUpon>internshipEntry.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="internshipEntry.aspx.designer.cs">
-      <DependentUpon>internshipEntry.aspx</DependentUpon>
     </Compile>
     <Compile Include="MemberPages\members.aspx.cs">
       <DependentUpon>members.aspx</DependentUpon>

@@ -32,12 +32,26 @@ namespace WebApp
 
         }
 
-        
+        protected void rateIntern_Click(object sender, EventArgs e)
+        {
+            CompanyPanel.Visible= false;
+            internPanel.Visible= true;
+            
+
+        }
+        protected void InsertCancelButton_Click(object sender, EventArgs e)
+        {
+            CompanyPanel.Visible = true;
+            internPanel.Visible = false;
 
 
-      
- //Response.Redirect("ratingTable.aspx");
-            //<a runat="server" href="ratingTable.aspx"></a>;
-       
+        }
+
+
+
+
+        //Response.Redirect("ratingTable.aspx");
+        //<a runat="server" href="ratingTable.aspx"></a>;
+
     }
 }

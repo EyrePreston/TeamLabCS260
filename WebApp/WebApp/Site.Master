@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApp.SiteMaster" %>
 
-<!DOCTYPE html>
+<%--<!DOCTYPE html>--%>
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
@@ -68,7 +68,6 @@
                                 <li><a runat="server" href="~/">Home</a></li>
                                 <li><a runat="server" href="~/CompnayHomePage.aspx">Company</a></li>
                                 <li><a runat="server" href="~/Contact">Contact</a></li>
-                                <li><a runat="server" href="internshipEntry.aspx">Rate Intern</a></li>
                                 <li><a runat="server" href="ratingTable.aspx">Rating Table</a></li>
                                 <li><a runat="server" href="~/About">About</a></li>
                                 </ul>
